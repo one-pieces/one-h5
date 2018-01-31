@@ -1,0 +1,24 @@
+@import "mixin.scss";
+
+.second {
+  @include background-photo("../img/second/background.jpg");
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30%;
+  }
+
+  &__slogen {
+    width: 182px;
+    height: 44px;
+    @include background-photo("../img/second/slogen.png");
+  }
+
+  &__sticks {
+    width: 150px;
+    height: 303px;
+    margin-top: 15%;
+    @include background-photo("../img/second/sticks.png");
+  }
+}

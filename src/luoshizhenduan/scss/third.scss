@@ -1,0 +1,49 @@
+@import "animation.scss";
+@import "mixin.scss";
+
+.third {
+  background: rgba(0, 0, 0, .8);
+
+  &__light {
+    width: 100%;
+    height: 80%;
+    @include background-photo("../img/third/light.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &:before {
+      z-index: 0;
+      content: '';
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: absolute;
+      background: radial-gradient(rgba(255, 223, 67, .2), rgba(255, 223, 67, 0) 70%);
+
+      @extend .ani-scale;
+    }
+  }
+
+  &__stick {
+    z-index: 1;
+    width: 90px;
+    height: 414px;
+    margin-top: 20%;
+    &.aiqing-stick {
+      @include background-photo("../img/third/aiqing-stick.png");
+    }
+    &.caiyun-stick {
+      @include background-photo("../img/third/caiyun-stick.png");
+    }
+    &.jiankang-stick {
+      @include background-photo("../img/third/jiankang-stick.png");
+    }
+    &.renyuan-stick {
+      @include background-photo("../img/third/renyuan-stick.png");
+    }
+    &.shiye-stick {
+      @include background-photo("../img/third/shiye-stick.png");
+    }
+  }
+}

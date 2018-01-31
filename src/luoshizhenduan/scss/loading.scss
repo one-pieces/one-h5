@@ -1,0 +1,29 @@
+@import 'mixin.scss';
+
+.loading {
+  @include background-photo("../img/background.jpg");
+
+  &__content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__logo {
+      width: 20px;
+      height: 99px;
+      @include background-photo("../img/loading/loading.png");
+    }
+    &__text {
+      font-size: 15px;
+      margin-top: 10px;
+      color: rgba(45, 15, 11, .6);
+    }
+    &__number {
+      font-size: 14px;
+      color: rgba(45, 15, 11, .6);
+    }
+  }
+}
