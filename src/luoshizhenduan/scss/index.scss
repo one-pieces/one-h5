@@ -1,6 +1,10 @@
 @import "animation.scss";
 @import "mixin.scss";
 
+body {
+  background: rgba(250, 229, 175, .8);
+}
+
 .fullscreen {
   position: absolute;
   width: 100%;

@@ -28,9 +28,10 @@ const queue = new resLoader({
   onComplete() {
     console.log('preLoading complete');
     // 禁止拉动
-    $('body').show().on('touchmove', (e) => {
+    $('body').on('touchmove', (e) => {
       e.preventDefault();
     });
+    $('#app').show();
     script.loadManifest();
   }
 });
