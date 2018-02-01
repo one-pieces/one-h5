@@ -45,6 +45,11 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name]/index.[chunkhash:7].js'
   },
+  resolve: {
+    alias: {
+      'util': path.join(__dirname, 'util')
+    }
+  },
   module: {
     rules: [{
       test: /\.js$/,

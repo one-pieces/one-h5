@@ -1,3 +1,5 @@
+import { deviceMotionShake } from 'util/motion';
+
 function loadManifest() {
   const manifest = [
     { src: require('../img/first/background.jpg'), id: 'page1_background' },
@@ -31,10 +33,14 @@ function start() {
 
 function showSecondPage() {
   $('#second').show();
-  setTimeout(() => {
+  deviceMotionShake().then(() => {
     $('#second .second__sticks').removeClass('ani-shake');
     showThirdPage();
-  }, 1000);
+  });
+  // setTimeout(() => {
+  //   $('#second .second__sticks').removeClass('ani-shake');
+  //   showThirdPage();
+  // }, 1000);
 }
 
 function showThirdPage() {
