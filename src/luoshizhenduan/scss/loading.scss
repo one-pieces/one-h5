@@ -14,15 +14,19 @@
     &__logo {
       width: 20px;
       height: 99px;
+      margin-bottom: 10px;
       @include background-photo("../img/loading/loading.png");
     }
     &__text {
       font-size: 15px;
-      margin-top: 10px;
       color: rgba(45, 15, 11, .6);
     }
     &__number {
       font-size: 14px;
+      color: rgba(45, 15, 11, .6);
+    }
+    &__complete {
+      font-size: 18px;
       color: rgba(45, 15, 11, .6);
     }
   }

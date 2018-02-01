@@ -60,7 +60,10 @@ function loadManifest() {
     },
     onComplete() {
       console.log('loading complete');
-      start();
+      $('#loading .loading__content__text').hide();
+      $('#loading .loading__content__complete').show().on('click', () => {
+        start();
+      });
     }
   });
   queue.start();
