@@ -81,7 +81,7 @@ function start() {
 function showSecondPage() {
   $('#second').show();
   deviceMotionShake(1000).then(() => {
-    $('#second .second__sticks').removeClass('ani-shake');
+    $('#second .second__sticks').removeClass('ani-shake-inter');
     showThirdPage();
   });
 }
