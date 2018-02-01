@@ -21,7 +21,7 @@
       position: absolute;
       background: radial-gradient(rgba(255, 223, 67, .2), rgba(255, 223, 67, 0) 70%);
 
-      @extend .ani-scale;
+      @extend .ani-scale-infinite;
     }
   }
 
@@ -31,7 +31,8 @@
     height: 414px;
     margin-top: 20%;
 
-    @extend .ani-opacity;
+    @extend .ani-stick-result;
+
     &.aiqing-stick {
       @include background-photo("../img/third/aiqing-stick.png");
     }

@@ -8,12 +8,12 @@
   transform-origin: 50% 70%;
 }
 
-.ani-scale {
-  animation: scale 1s infinite linear;
+.ani-scale-infinite {
+  animation: scale-infinite 2s infinite linear;
 }
 
-.ani-opacity {
-  animation: opacity 1.8s ease-in-out;
+.ani-stick-result {
+  animation: stick-result 1.8s ease-in-out;
 }
 
 .ani-rotate-infinite {
@@ -65,7 +65,7 @@
   }
 }
 
-@keyframes scale {
+@keyframes scale-infinite {
   0% {
     transform: scale(1);
   }
@@ -86,12 +86,14 @@
   }
 }
 
-@keyframes opacity {
+@keyframes stick-result {
   0% {
     opacity: .3;
+    transform: scale(.5);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
