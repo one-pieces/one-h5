@@ -3,12 +3,48 @@
   transform-origin: 50% 70%;
 }
 
+.ani-shake-inter {
+  animation: shake-inter 1s infinite ease-in-out;
+  transform-origin: 50% 70%;
+}
+
 .ani-scale {
   animation: scale 1s infinite linear;
 }
 
 .ani-opacity {
   animation: opacity 1.8s ease-in-out;
+}
+
+.ani-rotate-infinite {
+  animation: rotate 1.8s infinite linear;
+}
+
+@keyframes shake-inter {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-2deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes shake {
@@ -56,5 +92,14 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
