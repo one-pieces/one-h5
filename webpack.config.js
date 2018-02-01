@@ -88,7 +88,7 @@ module.exports = {
       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
       loader: 'url-loader',
       options: {
-        limit: 10000,
+        limit: 10,
         name: '[path][name].[hash:7].[ext]',
         outputPath: (path) => path.split('/').slice(1).join('/'),
         publicPath: (path) => path.split('/').slice(1).join('/')
