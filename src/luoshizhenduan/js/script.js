@@ -1,26 +1,70 @@
 import { deviceMotionShake } from 'util/motion';
 
-function loadManifest() {
-  const manifest = [
-    { src: require('../img/first/background.jpg'), id: 'page1_background' },
-    { src: require('../img/first/button.gif'), id: 'page1_button' },
-    { src: require('../img/first/couplet-left.png'), id: 'page1_couplet-left' },
-    { src: require('../img/first/couplet-right.png'), id: 'page1_couplet-right' },
-    { src: require('../img/first/slogen.png'), id: 'page1_slogen' },
-    { src: require('../img/first/stage.gif'), id: 'page1_stage' }
-  ];
+// function loadManifest() {
+//   const manifest = [
+//     { src: require('../img/first/background.jpg'), id: 'page1_background' },
+//     { src: require('../img/first/button.gif'), id: 'page1_button' },
+//     { src: require('../img/first/couplet-left.png'), id: 'page1_couplet-left' },
+//     { src: require('../img/first/couplet-right.png'), id: 'page1_couplet-right' },
+//     { src: require('../img/first/slogen.png'), id: 'page1_slogen' },
+//     { src: require('../img/first/stage.gif'), id: 'page1_stage' },
+//     { src: require('../img/second/background.jpg'), id: 'page2_background' },
+//     { src: require('../img/second/slogen.png'), id: 'page2_slogen' },
+//     { src: require('../img/second/sticks.png'), id: 'page2_sticks' },
+//     { src: require('../img/third/light.png'), id: 'page3_light' },
+//     { src: require('../img/third/aiqing-stick.png'), id: 'page3_aiqing-stick' },
+//     { src: require('../img/third/caiyun-stick.png'), id: 'page3_caiyun-stick' },
+//     { src: require('../img/third/jiankang-stick.png'), id: 'page3_jiankang-stick' },
+//     { src: require('../img/third/renyuan-stick.png'), id: 'page3_renyuan-stick' },
+//     { src: require('../img/third/shiye-stick.png'), id: 'page3_shiye-stick' },
+//     { src: require('../img/fourth/background.jpg'), id: 'page4_background' }
+//   ];
+//
+//   const queue = new createjs.LoadQueue();
+//   queue.on('progress', () => {
+//     $('#loading .loading__content__number').text((queue.progress*100|0) + '%');
+//     console.log((queue.progress*100|0) + '%');
+//   });
+//   queue.on('complete', () => {
+//     console.log('loading complete');
+//     start();
+//   }, this);
+//   queue.loadManifest(manifest);
+// };
 
-  const queue = new createjs.LoadQueue();
-  queue.on('progress', () => {
-    $('#loading .loading__content__number').text((queue.progress*100|0) + '%');
-    console.log((queue.progress*100|0) + '%');
+function loadManifest() {
+  const queue = new resLoader({
+    resources: [
+      require('../img/first/background.jpg'),
+      require('../img/first/button.gif'),
+      require('../img/first/couplet-left.png'),
+      require('../img/first/couplet-right.png'),
+      require('../img/first/slogen.png'),
+      require('../img/first/stage.gif'),
+      require('../img/second/background.jpg'),
+      require('../img/second/slogen.png'),
+      require('../img/second/sticks.png'),
+      require('../img/third/light.png'),
+      require('../img/second/sticks.png'),
+      require('../img/third/aiqing-stick.png'),
+      require('../img/third/caiyun-stick.png'),
+      require('../img/third/jiankang-stick.png'),
+      require('../img/third/renyuan-stick.png'),
+      require('../img/third/shiye-stick.png'),
+      require('../img/fourth/background.jpg')
+    ],
+    onProgress(current, total) {
+      const percent = parseInt(current / total * 100);
+      console.log('percent', percent);
+      $('#loading .loading__content__number').text(percent + '%');
+    },
+    onComplete() {
+      console.log('loading complete');
+      start();
+    }
   });
-  queue.on('complete', () => {
-    console.log('loading complete');
-    start();
-  }, this);
-  queue.loadManifest(manifest);
-};
+  queue.start();
+}
 
 function start() {
   $('#loading').hide();
@@ -37,10 +81,6 @@ function showSecondPage() {
     $('#second .second__sticks').removeClass('ani-shake');
     showThirdPage();
   });
-  // setTimeout(() => {
-  //   $('#second .second__sticks').removeClass('ani-shake');
-  //   showThirdPage();
-  // }, 1000);
 }
 
 function showThirdPage() {

@@ -47,7 +47,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'util': path.join(__dirname, 'util')
+      'util': path.join(__dirname, 'util'),
+      'src': path.join(__dirname, 'src')
     }
   },
   module: {
@@ -105,7 +106,7 @@ module.exports = {
       compress: {
         warnings: false
       },
-      sourceMap: true
+      // sourceMap: true
     })
   ],
   devServer: {
