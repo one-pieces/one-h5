@@ -80,8 +80,6 @@ function start() {
 
 function showSecondPage() {
   $('#second').show();
-  $('#second .second__sticks').removeClass('ani-shake-inter');
-  showThirdPage();
   deviceMotionShake(1000).then(() => {
     $('#second .second__sticks').removeClass('ani-shake-inter');
     showThirdPage();
