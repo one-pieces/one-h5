@@ -8,6 +8,7 @@ import './scss/fourth.scss';
 import 'animate.css';
 import 'script-loader!util/resLoader';
 import 'script-loader!jquery/dist/jquery.min';
+import musicUrl from './static/music.mp3';
 
 import script from './js/script';
 
@@ -33,13 +34,13 @@ const queue = new resLoader({
     $('#app').show();
 
     const $audio = document.getElementById('audio');
+    $audio.src = musicUrl;
+    $audio.loop = 'loop';
+    $audio.play();
+    // 微信不能自动播放音频，需要在微信的回调函数中播放音频
     document.addEventListener('WeixinJSBridgeReady', function () {
       WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
         console.log('getNetworkType', e);
-        // network = e.err_msg.split(':')[1];  //结果在这里
-        // bgmusic = document.getElementById('audio');
-        // $audio.src = './static/music.mp3';
-        // $audio.loop = 'loop';
         $audio.play();
       });
     }, false);
