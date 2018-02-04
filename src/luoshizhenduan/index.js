@@ -31,6 +31,18 @@ const queue = new resLoader({
       e.preventDefault();
     });
     $('#app').show();
+    // 音乐事件
+    $('#music').on('click', function() {
+      const $audio = document.getElementById('audio');
+      console.log('aaa', $audio.paused);
+      if ($audio.paused) {
+        $(this).addClass('on');
+        $audio.play();
+      } else {
+        $(this).removeClass('on');
+        $audio.pause();
+      }
+    });
     script.loadManifest();
   }
 });

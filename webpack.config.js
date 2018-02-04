@@ -1,6 +1,8 @@
 const path = require('path');
+const fs = require('fs');
 const glob = require('glob');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -38,6 +40,20 @@ const ExtractTextPlugins = Object.keys(entry).map((name) => {
     filename: `${name}/index.[chunkhash:7].css`
   })
 });
+const CopyWebpackPluginConfig = Object.keys(entry).filter(name => {
+  //检测文件或者文件夹存在 nodeJS
+  function fsExistsSync(path) {
+    try{
+      fs.accessSync(path,fs.F_OK);
+    }catch(e){
+      return false;
+    }
+    return true;
+  }
+  return fsExistsSync(`./src/${name}/static`);
+}).map((name) => ({
+  from: `./src/${name}/static`, to: `${name}/static`
+}));
 
 module.exports = {
   entry,
@@ -88,7 +104,7 @@ module.exports = {
         }]
       })
     }, {
-      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      test: /\.(png|jpe?g|gif|svg|mp3)(\?.*)?$/,
       loader: 'url-loader',
       options: {
         limit: 10,
@@ -101,6 +117,7 @@ module.exports = {
   plugins: [
     ...HtmlWebpackPlugins,
     ...ExtractTextPlugins,
+    new CopyWebpackPlugin(CopyWebpackPluginConfig),
     new CleanWebpackPlugin(['dist']),
     // new webpack.DefinePlugin({
     //   'process.env': 'prod'

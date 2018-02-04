@@ -32,7 +32,12 @@ body {
     width: 30px;
     height: 30px;
     margin-left: 5%;
-    @include background-photo("../img/music-open.png");
+    @include background-photo("../img/music-close.png");
+
+    &.on {
+      @include background-photo("../img/music-open.png");
+      @extend .ani-rotate-infinite;
+    }
   }
 
   .logo {
