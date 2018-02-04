@@ -73,7 +73,7 @@ function loadManifest() {
       console.log('loading complete');
       $('#loading .loading__content__text').hide();
       $('#loading .loading__content__complete').show().on('click', () => {
-        $('#loading').fadeOut(500);
+        $('#loading').fadeOut(300);
         start();
       });
     }
@@ -82,7 +82,7 @@ function loadManifest() {
 }
 
 function start() {
-  $('#first').fadeIn(500);
+  $('#first').fadeIn(300);
   $('#first .first__button').on('click', () => {
     $('#first').fadeOut(300);
     showSecondPage();
@@ -105,13 +105,14 @@ function showThirdPage() {
   console.log('stick index ', index);
   const stickName = stickList[index];
   $('#third  .third__stick').addClass(`${stickName}-stick`).on('click', () => {
-    $('#second').fadeOut(1000).siblings('#third').fadeOut(1000);
+    $('#second').fadeOut(300);
+    $('#third').fadeOut(300);
     showFourthPage(stickName);
   });
 }
 
 function showFourthPage(stickName) {
-  $('#fourth').fadeIn(500);
+  $('#fourth').fadeIn(300);
   $('#fourth .fourth__wang').addClass(`${stickName}-wang`);
   $('#fourth .again-btn').on('click', () => {
     $('#fourth').fadeOut(300);
