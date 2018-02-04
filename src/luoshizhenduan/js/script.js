@@ -51,7 +51,18 @@ function loadManifest() {
       require('../img/third/jiankang-stick.png'),
       require('../img/third/renyuan-stick.png'),
       require('../img/third/shiye-stick.png'),
-      require('../img/fourth/background.jpg')
+      require('../img/fourth/background.jpg'),
+      require('../img/fourth/again-btn.png'),
+      require('../img/fourth/aiqingwang.png'),
+      require('../img/fourth/caiyunwang.png'),
+      require('../img/fourth/cloud1.png'),
+      require('../img/fourth/cloud2.png'),
+      require('../img/fourth/flower1.png'),
+      require('../img/fourth/flower2.png'),
+      require('../img/fourth/jiankangwang.png'),
+      require('../img/fourth/renyuanwang.png'),
+      require('../img/fourth/share-btn.png'),
+      require('../img/fourth/shiyewang.png')
     ],
     onProgress(current, total) {
       const percent = parseInt(current / total * 100);
