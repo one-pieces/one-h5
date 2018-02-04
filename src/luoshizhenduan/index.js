@@ -31,9 +31,20 @@ const queue = new resLoader({
       e.preventDefault();
     });
     $('#app').show();
+
+    const $audio = document.getElementById('audio');
+    document.addEventListener('WeixinJSBridgeReady', function () {
+      WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+        console.log('getNetworkType', e);
+        // network = e.err_msg.split(':')[1];  //结果在这里
+        // bgmusic = document.getElementById('audio');
+        // $audio.src = './static/music.mp3';
+        // $audio.loop = 'loop';
+        $audio.play();
+      });
+    }, false);
     // 音乐事件
     $('#music').on('click', function() {
-      const $audio = document.getElementById('audio');
       console.log('aaa', $audio.paused);
       if ($audio.paused) {
         $(this).addClass('on');
