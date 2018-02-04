@@ -3,19 +3,6 @@
   transform-origin: 50% 70%;
 }
 
-.ani-shake-inter {
-  animation: shake-inter 1s infinite ease-in-out;
-  transform-origin: 50% 70%;
-}
-
-.ani-scale-infinite {
-  animation: scale-infinite 2s infinite linear;
-}
-
-.ani-stick-result {
-  animation: stick-result 1s ease-in-out;
-}
-
 .ani-rotate-infinite {
   animation: rotate 1.8s infinite linear;
 }
@@ -28,31 +15,14 @@
   animation: cloud 3.5s .5s infinite linear;
 }
 
-@keyframes shake-inter {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(2deg);
-  }
-  20% {
-    transform: rotate(0deg);
-  }
-  30% {
-    transform: rotate(-2deg);
-  }
-  40% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(2deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+.ani-flower1 {
+  animation: shake 2s infinite ease-in-out;
+  transform-origin: 100% 20%;
+}
+
+.ani-flower2 {
+  animation: shake 2s infinite ease-in;
+  transform-origin: 0 50%;
 }
 
 @keyframes shake {
@@ -60,48 +30,16 @@
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(2deg);
+    transform: rotate(1deg);
   }
   50% {
     transform: rotate(0deg);
   }
   75% {
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
   }
   100% {
     transform: rotate(0deg);
-  }
-}
-
-@keyframes scale-infinite {
-  0% {
-    transform: scale(1);
-  }
-  20% {
-    transform: scale(1.5);
-  }
-  //40% {
-  //  transform: scale(1.5);
-  //}
-  //60% {
-  //  transform: scale(1.2);
-  //}
-  80% {
-    transform: scale(.6);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes stick-result {
-  0% {
-    opacity: .3;
-    transform: scale(.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 

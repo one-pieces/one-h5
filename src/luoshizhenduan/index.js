@@ -5,10 +5,9 @@ import './scss/first.scss';
 import './scss/second.scss';
 import './scss/third.scss';
 import './scss/fourth.scss';
-// import 'script-loader!preloadjs/lib/preloadjs.min';
-// import 'script-loader!createjs/builds/1.0.0/createjs.min';
+import 'animate.css';
 import 'script-loader!util/resLoader';
-import 'script-loader!zepto/dist/zepto.min';
+import 'script-loader!jquery/dist/jquery.min';
 
 import script from './js/script';
 

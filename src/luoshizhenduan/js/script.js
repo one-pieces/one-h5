@@ -62,6 +62,7 @@ function loadManifest() {
       console.log('loading complete');
       $('#loading .loading__content__text').hide();
       $('#loading .loading__content__complete').show().on('click', () => {
+        $('#loading').fadeOut(500);
         start();
       });
     }
@@ -70,18 +71,22 @@ function loadManifest() {
 }
 
 function start() {
-  $('#loading').hide();
-  $('#first').show();
+  $('#first').fadeIn(500);
   $('#first .first__button').on('click', () => {
-    $('#first').hide();
+    $('#first').fadeOut(300);
     showSecondPage();
   });
 }
 
 function showSecondPage() {
-  $('#second').show();
+  $('#second').fadeIn(300);
+  $('#second .second__sticks').addClass('animated wobble infinite');
+  setTimeout(() => {
+    $('#second .second__sticks').removeClass('animated wobble infinite');
+    showThirdPage();
+  }, 3000);
   deviceMotionShake(1000).then(() => {
-    $('#second .second__sticks').removeClass('ani-shake-inter');
+    $('#second .second__sticks').removeClass('animated wobble infinite');
     showThirdPage();
   });
 }
@@ -93,17 +98,16 @@ function showThirdPage() {
   console.log('stick index ', index);
   const stickName = stickList[index];
   $('#third  .third__stick').addClass(`${stickName}-stick`).on('click', () => {
-    $('#second').hide();
-    $('#third').hide();
+    $('#second').fadeOut(1000).siblings('#third').fadeOut(1000);
     showFourthPage(stickName);
   });
 }
 
 function showFourthPage(stickName) {
-  $('#fourth').show();
+  $('#fourth').fadeIn(500);
   $('#fourth .fourth__wang').addClass(`${stickName}-wang`);
   $('#fourth .again-btn').on('click', () => {
-    $('#fourth').hide();
+    $('#fourth').fadeOut(300);
     showSecondPage();
   });
 }
