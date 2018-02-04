@@ -36,11 +36,13 @@ const queue = new resLoader({
     const $audio = document.getElementById('audio');
     $audio.src = musicUrl;
     $audio.loop = 'loop';
+    $('#music').addClass('on');
     $audio.play();
     // 微信不能自动播放音频，需要在微信的回调函数中播放音频
     document.addEventListener('WeixinJSBridgeReady', function () {
       WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
         console.log('getNetworkType', e);
+        $('#music').addClass('on');
         $audio.play();
       });
     }, false);
