@@ -81,15 +81,17 @@ function loadManifest() {
 }
 
 function start() {
-  $('#first').fadeIn(100);
+  $('#first').fadeIn(300);
   $('#first .first__button').on('click', () => {
     $('#first').fadeOut(100, showSecondPage);
   });
 }
 
 function showSecondPage() {
-  $('#second').fadeIn(100);
+  $('#second').fadeIn(300);
   $('#second .second__sticks').addClass('animated wobble infinite');
+  $('#second .second__sticks').removeClass('animated wobble infinite');
+  showThirdPage();
   deviceMotionShake(1000).then(() => {
     $('#second .second__sticks').removeClass('animated wobble infinite');
     showThirdPage();
@@ -111,7 +113,7 @@ function showThirdPage() {
 }
 
 function showFourthPage(stickName) {
-  $('#fourth').fadeIn(100);
+  $('#fourth').fadeIn(300);
   $('#fourth .fourth__wang').addClass(`${stickName}-wang`);
   $('#fourth .again-btn').on('click', () => {
     $('#fourth').fadeOut(100, showSecondPage);
