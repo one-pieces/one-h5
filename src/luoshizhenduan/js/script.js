@@ -88,19 +88,24 @@ function showSecondPage() {
 
 function showThirdPage() {
   $('#third').show();
-  const stickList = ['.aiqing-stick', '.caiyun-stick', '.jiankang-stick', '.renyuan-stick', '.shiye-stick'];
+  const stickList = ['aiqing', 'caiyun', 'jiankang', 'renyuan', 'shiye'];
   const index = Math.round(Math.random() * (stickList.length - 1));
   console.log('stick index ', index);
   const stickName = stickList[index];
-  $(`#third ${stickName}`).show().on('click', () => {
+  $('#third  .third__stick').addClass(`${stickName}-stick`).on('click', () => {
     $('#second').hide();
     $('#third').hide();
-    showFourthPage();
+    showFourthPage(stickName);
   });
 }
 
-function showFourthPage() {
+function showFourthPage(stickName) {
   $('#fourth').show();
+  $('#fourth .fourth__wang').addClass(`${stickName}-wang`);
+  $('#fourth .again-btn').on('click', () => {
+    $('#fourth').hide();
+    showSecondPage();
+  });
 }
 
 export default {
