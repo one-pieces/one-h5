@@ -2,7 +2,7 @@ exports.wxSetJsSdkConfig = (url) => {
   return new Promise((resolve, reject) => {
     $.ajax({
       type: 'get',
-      url: 'http://2868497d.ngrok.io/getJsSdkSign',
+      url: 'http://d8006ef8.ngrok.io/getJsSdkSign',
       data: { url },
       dataType: 'json',
       success(res) {
