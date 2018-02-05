@@ -113,8 +113,15 @@ function showThirdPage() {
 function showFourthPage(stickName) {
   $('#fourth').fadeIn(300);
   $('#fourth .fourth__wang').addClass(`${stickName}-wang`);
+  // 再来一次
   $('#fourth .again-btn').on('click', () => {
     $('#fourth').fadeOut(100, showSecondPage);
+  });
+  // 分享
+  $('#fourth .share-btn').on('click', () => {
+    $('#fourth .fourth__mark').fadeIn(100).on('click', function () {
+      $(this).hide();
+    });
   });
 }
 

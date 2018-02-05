@@ -12,6 +12,29 @@ import musicUrl from './static/music.mp3';
 
 import script from './js/script';
 
+import { wxSetJsSdkConfig } from 'util/wx-util';
+
+// 分享设置
+wxSetJsSdkConfig(window.location.href).then(() => {
+  const params = {
+    title: '罗氏上上签',
+    desc: '罗旗招展迎春到，氏业友成健康来',
+    link: window.location.href,
+    imgUrl: require('./img/second/sticks.png'),
+    success() {
+      // 用户确认分享后执行的回调函数
+    },
+    cancel() {
+      // 用户取消分享后执行的回调函数
+    }
+  };
+  wx.onMenuShareTimeline(params);
+  wx.onMenuShareAppMessage(params);
+  wx.onMenuShareQQ(params);
+  wx.onMenuShareWeibo(params);
+  wx.onMenuShareQZone(params);
+});
+
 // 加载loading页资源
 const queue = new resLoader({
   resources: [

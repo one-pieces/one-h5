@@ -67,6 +67,9 @@ module.exports = {
       'src': path.join(__dirname, 'src')
     }
   },
+  externals: {
+    wx: true
+  },
   module: {
     rules: [{
       test: /\.js$/,
