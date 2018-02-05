@@ -2,7 +2,7 @@ exports.wxSetJsSdkConfig = (url) => {
   return new Promise((resolve, reject) => {
     $.ajax({
       type: 'get',
-      url: 'http://f179d86d.ngrok.io/getJsSdkSign',
+      url: 'http://2868497d.ngrok.io/getJsSdkSign',
       data: { url },
       dataType: 'json',
       success(res) {
@@ -26,7 +26,7 @@ exports.wxSetJsSdkConfig = (url) => {
         });
 
         wx.error((res) => {
-          console.log("wx has error:" + res);
+          console.log("wx has error: ", res);
           reject(res);
         });
       }
