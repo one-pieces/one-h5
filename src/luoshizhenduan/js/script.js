@@ -103,8 +103,10 @@ function showThirdPage() {
   const index = Math.round(Math.random() * (stickList.length - 1));
   console.log('stick index ', index);
   const stickName = stickList[index];
-  $('#third__stick').removeClass()
-    .addClass(`third__stick animated fadeIn zoomIn ${stickName}-stick`).on('click', function() {
+  $('#third__stick')
+    .removeClass()
+    .addClass(`third__stick animated fadeIn zoomIn ${stickName}-stick`)
+    .on('click', function() {
       $(this).off('click');
       $('#second').fadeOut(100);
       $('#third').fadeOut(100, () => {
@@ -115,7 +117,7 @@ function showThirdPage() {
 
 function showFourthPage(stickName) {
   $('#fourth').fadeIn(300);
-  $('#fourth .fourth__wang').addClass(`${stickName}-wang`);
+  $('#fourth__wang').removeClass().addClass(`fourth__wang ${stickName}-wang`);
   // 再来一次
   $('#fourth .again-btn').on('click', function() {
     $(this).off('click');
