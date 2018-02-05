@@ -97,10 +97,11 @@
 
     .share-tips {
       position: absolute;
-      top: 5%;
+      top: 3%;
       right: 5%;
-      color: #fff;
-      font-size: 18px;
+      width: 235px;
+      height: 169px;
+      @include background-photo("../img/fourth/share.png");
     }
   }
 }

@@ -17,8 +17,8 @@ import { wxSetJsSdkConfig } from 'util/wx-util';
 // 分享设置
 wxSetJsSdkConfig(window.location.href).then(() => {
   const params = {
-    title: '罗氏上上签',
-    desc: '罗旗招展迎春到，氏业友成健康来',
+    title: '罗氏健康旺旺签',
+    desc: '带着新年愿“旺”，我们回家吧...',
     link: window.location.href,
     imgUrl: 'http://one-pieces.me/one-h5/dist/luoshizhenduan/static/icon.png',
     success() {

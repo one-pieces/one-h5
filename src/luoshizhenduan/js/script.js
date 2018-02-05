@@ -62,7 +62,8 @@ function loadManifest() {
       require('../img/fourth/jiankangwang.png'),
       require('../img/fourth/renyuanwang.png'),
       require('../img/fourth/share-btn.png'),
-      require('../img/fourth/shiyewang.png')
+      require('../img/fourth/shiyewang.png'),
+      require('../img/fourth/share.png')
     ],
     onProgress(current, total) {
       const percent = parseInt(current / total * 100);
@@ -90,6 +91,8 @@ function start() {
 function showSecondPage() {
   $('#second').fadeIn(300);
   $('#second .second__sticks').addClass('animated wobble infinite');
+  $('#second .second__sticks').removeClass('animated wobble infinite');
+  showThirdPage();
   deviceMotionShake(1000).then(() => {
     $('#second .second__sticks').removeClass('animated wobble infinite');
     showThirdPage();
