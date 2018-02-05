@@ -103,19 +103,22 @@ function showThirdPage() {
   const index = Math.round(Math.random() * (stickList.length - 1));
   console.log('stick index ', index);
   const stickName = stickList[index];
-  $('#third  .third__stick').addClass(`${stickName}-stick`).on('click', () => {
-    $('#second').fadeOut(100);
-    $('#third').fadeOut(100, () => {
-      showFourthPage(stickName);
+  $('#third__stick').removeClass()
+    .addClass(`third__stick animated fadeIn zoomIn ${stickName}-stick`).on('click', function() {
+      $(this).off('click');
+      $('#second').fadeOut(100);
+      $('#third').fadeOut(100, () => {
+        showFourthPage(stickName);
+      });
     });
-  });
 }
 
 function showFourthPage(stickName) {
   $('#fourth').fadeIn(300);
   $('#fourth .fourth__wang').addClass(`${stickName}-wang`);
   // 再来一次
-  $('#fourth .again-btn').on('click', () => {
+  $('#fourth .again-btn').on('click', function() {
+    $(this).off('click');
     $('#fourth').fadeOut(100, showSecondPage);
   });
   // 分享
