@@ -8,7 +8,7 @@ import './scss/fourth.scss';
 import 'animate.css';
 import 'script-loader!util/resLoader';
 import 'script-loader!jquery/dist/jquery.min';
-import musicUrl from './static/music.mp3';
+import musicUrl from './media/music.mp3';
 
 import script from './js/script';
 
@@ -20,7 +20,7 @@ wxSetJsSdkConfig(window.location.href).then(() => {
     title: '罗氏上上签',
     desc: '罗旗招展迎春到，氏业友成健康来',
     link: window.location.href,
-    imgUrl: require('./img/second/sticks.png'),
+    imgUrl: 'http://one-pieces.me/one-h5/dist/luoshizhenduan/static/icon.png',
     success() {
       // 用户确认分享后执行的回调函数
     },
