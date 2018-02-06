@@ -2,12 +2,14 @@ exports.wxSetJsSdkConfig = (url) => {
   return new Promise((resolve, reject) => {
     $.ajax({
       type: 'get',
-      url: 'http://d8006ef8.ngrok.io/getJsSdkSign',
+      // url: 'http://d8006ef8.ngrok.io/getJsSdkSign',
+      url: 'http://www.tron-m.com/tron-api/jssdk/share.do',
       data: { url },
       dataType: 'json',
       success(res) {
-        const { appId, timestamp, nonceStr, signature } = res.data;
-        if (res.code === 0) {
+        // const { appId, timestamp, nonceStr, signature } = res.data;
+        const { appId, timestamp, nonceStr, signature } = res.result;
+        if (res.code === 1) {
           wx.config({
             debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
             appId, // 必填，公众号的唯一标识

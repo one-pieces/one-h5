@@ -72,10 +72,11 @@ function loadManifest() {
     },
     onComplete() {
       console.log('loading complete');
-      $('#loading .loading__content__text').hide();
-      $('#loading .loading__content__complete').show().on('click', () => {
-        $('#loading').fadeOut(100, start);
-      });
+      $('#loading').fadeOut(100, start);
+      // $('#loading .loading__content__text').hide();
+      // $('#loading .loading__content__complete').show().on('click', () => {
+      //   $('#loading').fadeOut(100, start);
+      // });
     }
   });
   queue.start();
