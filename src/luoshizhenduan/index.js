@@ -20,7 +20,7 @@ wxSetJsSdkConfig(window.location.href).then(() => {
     title: '罗氏健康旺旺签',
     desc: '带着新年愿“旺”，我们回家吧...',
     link: window.location.href,
-    imgUrl: 'http://one-pieces.me/one-h5/dist/luoshizhenduan/static/icon.png',
+    imgUrl: 'http://test.tron-m.com/oib/luoshi/luoshizhenduan/static/icon.png',
     success() {
       // 用户确认分享后执行的回调函数
       $('#fourth .fourth__mark').hide();
