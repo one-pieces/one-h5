@@ -92,6 +92,9 @@ function start() {
 function showSecondPage() {
   $('#second').fadeIn(300);
   $('#second .second__sticks').addClass('animated wobble infinite');
+
+  $('#second .second__sticks').removeClass('animated wobble infinite');
+  showThirdPage();
   deviceMotionShake(1000).then(() => {
     $('#second .second__sticks').removeClass('animated wobble infinite');
     showThirdPage();

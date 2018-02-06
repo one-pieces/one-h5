@@ -23,9 +23,11 @@ wxSetJsSdkConfig(window.location.href).then(() => {
     imgUrl: 'http://one-pieces.me/one-h5/dist/luoshizhenduan/static/icon.png',
     success() {
       // 用户确认分享后执行的回调函数
+      $('#fourth .fourth__mark').hide();
     },
     cancel() {
       // 用户取消分享后执行的回调函数
+      $('#fourth .fourth__mark').hide();
     }
   };
   wx.onMenuShareTimeline(params);
