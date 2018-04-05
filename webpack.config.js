@@ -35,11 +35,6 @@ const HtmlWebpackPlugins = Object.keys(entry).map((name) => {
     // favicon: './src/img/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
   })
 });
-const ExtractTextPlugins = Object.keys(entry).map((name) => {
-  return new ExtractTextPlugin({
-    filename: `${name}/index.[chunkhash:7].css`
-  })
-});
 const CopyWebpackPluginConfig = Object.keys(entry).filter(name => {
   //检测文件或者文件夹存在 nodeJS
   function fsExistsSync(path) {
@@ -119,7 +114,12 @@ module.exports = {
   },
   plugins: [
     ...HtmlWebpackPlugins,
-    ...ExtractTextPlugins,
+    // ExtractTextPlugin generates a file per entry,
+    // so we don't need to generate a list like HtmlWebpackPlugins,
+    // more details see https://www.npmjs.com/package/extract-text-webpack-plugin
+    new ExtractTextPlugin({
+      filename: `[name]/index.[chunkhash:7].css`
+    }),
     new CopyWebpackPlugin(CopyWebpackPluginConfig),
     new CleanWebpackPlugin(['dist']),
     // new webpack.DefinePlugin({
@@ -133,7 +133,8 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: './dist'
+    contentBase: path.join(__dirname, 'dist'),
+    port: 9000
   },
   devtool: 'inline-source-map'
 };
