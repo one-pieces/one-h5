@@ -1,0 +1,15 @@
+@mixin background-img($url) {
+  background: url($url) no-repeat;
+  background-size: 100% 100%;
+}
+
+@mixin background-obj($url, $width, $height, $top, $left, $bottom, $right) {
+  width: $width;
+  height: $height;
+  @include background-img($url);
+  position: absolute;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}

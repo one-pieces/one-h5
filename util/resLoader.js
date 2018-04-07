@@ -7,7 +7,7 @@
     module.exports = factory;
   } else {
     // 浏览器全局变量(root 即 window)
-    root.resLoader = factory(root);
+    root.ResLoader = factory(root);
   }
 }(this, function () {
   var isFunc = function (f) {
@@ -98,4 +98,4 @@
 
   // 暴露公共方法
   return ResLoader;
-}))
+}));

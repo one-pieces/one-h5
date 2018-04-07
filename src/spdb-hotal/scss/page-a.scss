@@ -1,0 +1,16 @@
+.page-a {
+  @include background-img('../img/f1/background.jpg');
+
+  &__talk {
+    width: 754px;
+    height: 765px;
+    @include background-img('../img/f1/talk.png');
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__button {
+    @include background-obj('../img/f1/button.png', 396px, 112px, 62%, '', '', 23%);
+  }
+}

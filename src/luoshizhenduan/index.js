@@ -38,7 +38,7 @@ wxSetJsSdkConfig(window.location.href).then(() => {
 });
 
 // 加载loading页资源
-const queue = new resLoader({
+const queue = new ResLoader({
   resources: [
     require('./img/background.jpg'),
     require('./img/logo.png'),

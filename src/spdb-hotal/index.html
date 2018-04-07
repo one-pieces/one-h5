@@ -8,6 +8,123 @@
   <title>浦发酒店银行</title>
 </head>
 <body>
-  我我我哦
+  <div id="app" class="op-hidden">
+    <section class="page-load op-bg-adaptive">
+      <div class="page-load__content">
+        <div class="page-load__content__text">Loading...</div>
+        <div class="page-load__content__number">0%</div>
+      </div>
+    </section>
+    <section class="page-a op-bg-adaptive">
+      <figure class="page-a__talk op-hidden">
+        <figure class="page-a__button animated pulse infinite"></figure>
+      </figure>
+    </section>
+    <section class="page-b op-bg-adaptive">
+      <figure class="page-b__talk op-hidden"></figure>
+      <figure class="page-b__bk-down op-hidden">
+        <figure class="page-b__bk-down-button"></figure>
+      </figure>
+      <figure class="page-b__bag op-hidden">
+        <figure class="page-b__bag-talk op-hidden">
+          <div class="page-b__bag-tip">获得酒店值 +88</div>
+        </figure>
+      </figure>
+      <figure class="page-b__suitcase op-hidden">
+        <figure class="page-b__suitcase-talk op-hidden">
+          <div class="page-b__suitcase-tip">获得588酒店值</div>
+        </figure>
+      </figure>
+    </section>
+    <section class="page-c op-bg-adaptive">
+      <figure class="page-c__hongbao"></figure>
+      <figure class="page-c__hongbao2 op-hidden"></figure>
+      <figure class="page-c__paizi op-hidden"></figure>
+      <figure class="page-c__talk op-hidden"></figure>
+      <div class="page-c__button-content">
+        <figure class="page-c__button op-hidden animated pulse infinite"></figure>
+      </div>
+    </section>
+    <section class="page-d op-bg-adaptive">
+      <figure class="page-d__girl-fall"></figure>
+      <figure class="page-d__girl-sleep op-hidden"></figure>
+      <figure class="page-d__talk op-hidden"></figure>
+      <figure class="page-d__wave-left op-hidden"></figure>
+      <figure class="page-d__wave-right op-hidden"></figure>
+      <figure class="page-d__wave-down op-hidden"></figure>
+      <figure class="page-d__girl-jump op-hidden"></figure>
+      <figure class="page-d__light op-hidden"></figure>
+    </section>
+    <section class="page-e op-bg-adaptive op-hidden">
+      <figure class="page-e__talk op-hidden"></figure>
+    </section>
+    <section class="page-f op-bg-adaptive">
+      <figure class="page-f__shell2"></figure>
+      <figure class="page-f__shell op-hidden">
+        <figure class="page-f__talk op-hidden"></figure>
+      </figure>
+      <figure class="page-f__hand">
+        <figure class="page-f__bill"></figure>
+      </figure>
+    </section>
+    <section class="page-g op-bg-adaptive op-hidden">
+      <figure class="page-g__coin op-hidden"></figure>
+      <figure class="page-g__light op-hidden"></figure>
+      <figure class="page-g__case"></figure>
+      <figure class="page-g__hand">
+        <figure class="page-g__bill"></figure>
+        <figure class="page-g__bill-detail op-hidden"></figure>
+        <figure class="page-g__bill-discount op-hidden"></figure>
+      </figure>
+    </section>
+    <section class="page-h op-bg-adaptive">
+      <figure class="page-h__msg"></figure>
+      <figure class="page-h__hongbao">
+        <figure class="page-h__button"></figure>
+      </figure>
+      <figure class="page-h__wave"></figure>
+    </section>
+    <section class="page-i op-bg-adaptive">
+      <figure class="page-i__talk op-hidden"></figure>
+      <figure class="page-i__coin op-hidden"></figure>
+    </section>
+    <section class="page-j op-bg-adaptive op-hidden">
+      <figure class="page-j__background1 op-bg-adaptive op-hidden"></figure>
+      <figure class="page-j__word op-hidden"></figure>
+      <figure class="page-j__msg op-hidden"></figure>
+      <figure class="page-j__word1 op-hidden"></figure>
+    </section>
+    <section class="page-k op-bg-adaptive op-hidden"></section>
+    <section class="page-l op-bg-adaptive op-hidden">
+      <figure class="page-l__banner"></figure>
+      <figure class="page-l__button1"></figure>
+      <a href="https://ecentre.spdbccc.com.cn/creditcard/indexActivity.htm?data=P1019546">
+        <figure class="page-l__button2"></figure>
+      </a>
+      <section class="page-l__tip">
+        <div>即刻莅临酒店银行</div>
+        <div>享受更优惠的酒店价格和更多惊喜体验</div>
+      </sec>
+    </section>
+  </div>
+  <script type="text/javascript">
+    var config = {};
+    //rem设置
+    (function(doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          docEl.style.fontSize = 16 * (clientWidth / 1125) + 'px';
+          //宽与高度
+          document.body.style.height = clientWidth * (1125 / 2000) + "px"
+          config.clientWidth = clientWidth;
+          config.clientHeight =  clientWidth * (1125 / 2000)
+        };
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
 </body>
 </html>

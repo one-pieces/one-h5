@@ -1,3 +1,22 @@
-html body {
-  background: yellow;
+@import 'util/scss/mixin.scss';
+@import 'util/scss/reset.scss';
+@import 'util/scss/public.scss';
+@import "~animate.css";
+
+body {
+  overflow: hidden;
 }
+
+@import 'page-load';
+@import 'page-a';
+@import 'page-b';
+@import 'page-c';
+@import 'page-d';
+@import 'page-e';
+@import 'page-f';
+@import 'page-g';
+@import 'page-h';
+@import 'page-i';
+@import 'page-j';
+@import 'page-k';
+@import 'page-l';

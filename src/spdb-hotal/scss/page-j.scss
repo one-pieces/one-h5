@@ -1,0 +1,16 @@
+.page-j {
+  @include background-img('../img/f11/background.jpg');
+
+  &__background1 {
+    @include background-img('../img/f11/background1.jpg');
+  }
+  &__msg {
+    @include background-obj('../img/f11/msg.gif', 784px, 449px, 13%, 20%, initial, initial);
+  }
+  &__word {
+    @include background-obj('../img/f11/word.png', 636px, 393px, 30%, 20%, initial, initial);
+  }
+  &__word1 {
+    @include background-obj('../img/f11/word1.png', 636px, 393px, 30%, 20%, initial, initial);
+  }
+}

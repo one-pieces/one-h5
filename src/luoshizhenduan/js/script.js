@@ -33,7 +33,7 @@ import { deviceMotionShake } from 'util/motion';
 // };
 
 function loadManifest() {
-  const queue = new resLoader({
+  const queue = new ResLoader({
     resources: [
       require('../img/first/background.jpg'),
       require('../img/first/button.gif'),

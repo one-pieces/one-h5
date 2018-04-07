@@ -24,7 +24,7 @@ function loadManifest() {
     start();
   }, this);
   queue.loadManifest(manifest);
-};
+}
 
 function start() {
   console.log('wwww', C3D);

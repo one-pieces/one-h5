@@ -1,0 +1,26 @@
+.page-c {
+  left: -100%;
+  @include background-img('../img/f3/background.jpg');
+
+  &__hongbao {
+    @include background-obj('../img/f3/hongbao.gif', 1003px, 407px, initial, initial, 16%, 6%);
+  }
+  &__hongbao2 {
+    @include background-obj('../img/f3/hongbao2.png', 1003px, 407px, initial, initial, 16%, 6%);
+  }
+  &__paizi {
+    @include background-obj('../img/f3/paizi.png', 858px, 436px, initial, initial, 18%, 13%);
+  }
+  &__talk {
+    @include background-obj('../img/f3/talk.png', 964px, 434px, 25%, 50%, initial, initial);
+    transform: translateX(-50%);
+  }
+  &__button-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    @include background-obj('../img/f3/button.png', 500px, 137px, initial, initial, 2%, initial);
+  }
+}

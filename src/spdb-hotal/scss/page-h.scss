@@ -1,0 +1,20 @@
+.page-h {
+  left: 100%;
+  @include background-img('../img/f9/background.jpg');
+
+  &__msg {
+    @include background-obj('../img/f9/msg.png', 969px, 506px, 21%, 50%, initial, initial);
+    transform: translateX(-50%);
+  }
+  &__button {
+    @include background-obj('../img/f9/button.gif', 490px, 482px, 5%, 50%, initial, initial);
+    transform: translateX(-50%);
+  }
+  &__hongbao {
+    @include background-obj('../img/f9/hongbao.jpg', 1125px, 1000px, initial, 50%, 3%, initial);
+    transform: translateX(-50%);
+  }
+  &__wave {
+    @include background-obj('../img/f9/wave.png', 1125px, 230px, initial, initial, 0, 0);
+  }
+}

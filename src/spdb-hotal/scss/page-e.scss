@@ -1,0 +1,9 @@
+.page-e {
+  @include background-img('../img/f5/background.jpg');
+  background-size: 350% 350%;
+  background-position: 50% 40%;
+
+  &__talk {
+    @include background-obj('../img/f5/talk.png', 776px, 343px, 20%, initial, initial, 10%);
+  }
+}

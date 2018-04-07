@@ -1,0 +1,21 @@
+.page-f {
+  left: 100%;
+  @include background-img('../img/f6/background.jpg');
+
+  &__talk {
+    @include background-obj('../img/f6/talk.png', 776px, 343px, -150%, -150%, initial, initial);
+  }
+  &__shell {
+    @include background-obj('../img/f6/shell.gif', 315px, 227px, initial, initial, 3%, 5%);
+  }
+  &__shell2 {
+    @include background-obj('../img/f6/shell2.png', 315px, 227px, initial, initial, 3%, 5%);
+  }
+  &__hand {
+    @include background-obj('../img/f6/hand.png', 763px, 939px, 18%, initial, initial, 0);
+    transform: translateX(100%);
+  }
+  &__bill {
+    @include background-obj('../img/f6/bill.png', 397px, 596px, 1%, 22%, initial, initial);
+  }
+}

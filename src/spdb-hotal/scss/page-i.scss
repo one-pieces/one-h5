@@ -1,0 +1,12 @@
+.page-i {
+  left: 100%;
+  @include background-img('../img/f10/background.jpg');
+
+  &__talk {
+    @include background-obj('../img/f10/talk.png', 776px, 343px, 35%, 20%, initial, initial);
+  }
+  &__coin {
+    @include background-obj('../img/f10/coin.png', 728px, 890px, -100%, 50%, initial, initial);
+    transform: translateX(-50%);
+  }
+}
