@@ -135,16 +135,8 @@ function start() {
       pageE = new PageE($pageE);
       return new Promise(resolve => {
         setTimeout(() => {
-          pageE.$root.fadeIn(500, () =>{
-            pageE.$root.fadeOut(500, () => {
-              pageE.$root.fadeIn(1000);
-              pageD.$root.fadeOut(1500, () => {
-                pageE.$talk.fadeIn(800);
-                resolve();
-              });
-            });
-          });
-        }, 500);
+          changePageFade(pageD, pageE).then(resolve);
+        }, 800);
       });
     })
     .then(() => pageE.run())
@@ -183,10 +175,10 @@ function start() {
       return pageJ.run();
     })
     .then(() => {
-      pageJ.$root.fadeOut(300);
       return new Promise(resolve => {
+        pageJ.$root.fadeOut(300);
         $pageK
-          .fadeIn(300)
+          .fadeIn(500)
           .css({ transition: 'all 1s ease-in-out'})
           .css({ backgroundSize: '100%' })
           .one('transitionend', () => setTimeout(resolve, 800));
@@ -224,8 +216,8 @@ function changePageFade(from, to) {
   return new Promise(resolve => {
     to.$root.fadeIn(500, () => {
       to.$root.fadeOut(500, () => {
-        to.$root.fadeIn(1000);
-        from.$root.fadeOut(1500, resolve);
+        to.$root.fadeIn(800);
+        from.$root.fadeOut(1000, resolve);
       });
     });
   });

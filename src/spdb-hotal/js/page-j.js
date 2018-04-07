@@ -12,8 +12,8 @@ function PageJ (element, callback) {
 
 PageJ.prototype.changeBG = function() {
   return new Promise(resolve => {
-    this.$background1.fadeIn(500);
-    this.$word.fadeIn(1000, resolve);
+    this.$background1.show();
+    this.$word.fadeIn(800, resolve);
   });
 };
 

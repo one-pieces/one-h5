@@ -8,6 +8,7 @@ function PageE (element, callback) {
 }
 
 PageE.prototype.run = function() {
+  this.$talk.fadeIn(500);
   return new Promise((resolve) => {
     setTimeout(() => {
       this.$talk

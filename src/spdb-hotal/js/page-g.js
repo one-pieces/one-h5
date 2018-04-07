@@ -36,7 +36,7 @@ PageG.prototype.showCase = function() {
 PageG.prototype.changeBill = function(from, to) {
   return new Promise(resolve => {
     from.fadeOut(500);
-    to.fadeIn(500, resolve);
+    to.fadeIn(800, resolve);
   });
 };
 

@@ -19,8 +19,9 @@ function PageB (element, callback) {
 PageB.prototype.showMessage = function() {
   return new Promise((resolve) => {
     this.$talk.fadeIn(1000, () => {
-      this.$bkDown.fadeIn(1500);
-      this.$bkDownButton.on('click', resolve);
+      this.$bkDown.fadeIn(1500, () => {
+        this.$bkDownButton.on('click', resolve);
+      });
     });
   });
 };

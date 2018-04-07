@@ -1,5 +1,6 @@
 .page-load {
   @include background-img("../img/background.jpg");
+  z-index: 1000;
 
   &__content {
     position: absolute;
