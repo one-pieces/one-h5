@@ -14,7 +14,7 @@
     @include background-obj('../img/f2/button.gif', 362px, 228px, initial, initial, 7%, 20%);
   }
   &__bag {
-    @include background-obj('../img/f2/bag.png', 183px, 190px, initial, initial, 38%, 40%);
+    @include background-obj('../img/f2/bag.png', 183px, 190px, initial, initial, 43%, 15%);
   }
   &__bag-tip {
     font-weight: bold;
@@ -28,10 +28,10 @@
     transform: translateY(-100%);
   }
   &__boom {
-    @include background-obj('../img/f2/boom.gif', 350px, 254px, initial, initial, 35%, 30%);
+    @include background-obj('../img/f2/boom.gif', 350px, 254px, initial, initial, 40%, 3%);
   }
   &__suitcase {
-    @include background-obj('../img/f2/suitcase.png', 343px, 341px, initial, initial, 35%, 30%);
+    @include background-obj('../img/f2/suitcase.png', 343px, 341px, initial, initial, 39%, 3%);
   }
   &__suitcase-tip {
     font-weight: bold;

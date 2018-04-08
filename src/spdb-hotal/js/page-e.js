@@ -29,22 +29,20 @@ function moveLine(element, toDir, speed = 1) {
 }
 
 PageE.prototype.run = function() {
-  return new Promise((resolve) => {
-    moveLine(this.$root, 'top', 1.5).then(() => {
-      // this.$talk.fadeIn(1000, () => {
-        // this.$talk
-        //   .css({ transition: 'all 1.5s ease-in-out'})
-        //   .css({ transform: 'scale(0.7)' });
-        this.$root
-          .addClass('ani-change');
-        //   .one('animationend webkitAnimationEnd', resolve);
-        setTimeout(() => {
-          this.$root
-            .css({ transition: 'all 1.5s ease-in-out'})
-            .css({ backgroundSize: '100% 100%' })
-            .one('transitionend', resolve);
-        });
-      // });
+  return moveLine(this.$root, 'top', 1.5).then(() => {
+    return new Promise((resolve) => {
+    // this.$talk.fadeIn(1000, () => {
+      // this.$talk
+      //   .css({ transition: 'all 1.5s ease-in-out'})
+      //   .css({ transform: 'scale(0.7)' });
+      this.$beizi.fadeIn(500);
+      setTimeout(() => {
+        this.$beizi
+          .css({ transition: 'all 1.5s ease-in-out'})
+          .css({ backgroundSize: '100% 100%' })
+          .one('transitionend', resolve);
+      });
+    // });
     });
   });
 };

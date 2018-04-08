@@ -1,11 +1,11 @@
 .page-e {
   @include background-img('../img/f5/background.jpg');
   transform: translateY(100%);
-  &.ani-change {
-    @include background-img('../img/f5/beizi.jpg');
-    background-size: 350%;
+
+  &__beizi {
+    @include background-obj('../img/f5/beizi.jpg', 100%, 100%, 0, 0, initial, initial);
+    background-size: 350% 350%;
     background-position: 50% 40%;
-    //animation: scale3 1.5 ease-in-out forwards;
   }
 
   &__talk {

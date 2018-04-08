@@ -48,7 +48,6 @@ PageB.prototype.showMessage = function() {
       .show()
       .addClass('animated pulse')
       .one('animationend webkitAnimationEnd', () => {
-        console.log('pppo');
         moveLine(this.$bkDown, 'top').then(() => {
           this.$bkDownButton.on('click', resolve);
         })

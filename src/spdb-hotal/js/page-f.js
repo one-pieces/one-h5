@@ -21,12 +21,20 @@ PageF.prototype.showBill = function() {
 };
 
 PageF.prototype.run = function() {
-  return this.showBill().then(() => {
-    return new Promise(resolve => {
-      this.$shell2.hide();
-      this.$shell.show().on('click', () => {
-        this.$talk.fadeIn(500, () => setTimeout(resolve, 1000));
-      });
+  return new Promise(resolve => {
+    this.$root.fadeIn(500);
+    setTimeout(() => {
+      this.$root
+        .css({ transition: 'all 1.5s ease-in-out'})
+        .css({ backgroundSize: '100% 100%' })
+        .one('transitionend', () => {
+          this.showBill().then(() => {
+            this.$shell2.hide();
+            this.$shell.show().on('click', () => {
+              this.$talk.fadeIn(500, () => setTimeout(resolve, 1000));
+            });
+          });
+        });
     });
   });
 };

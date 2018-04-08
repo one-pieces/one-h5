@@ -1,6 +1,7 @@
 .page-f {
-  left: 100%;
   @include background-img('../img/f6/background.jpg');
+  background-size: 400% 400%;
+  background-position: 70% 40%;
 
   &__talk {
     @include background-obj('../img/f6/talk.png', 776px, 343px, -150%, -150%, initial, initial);

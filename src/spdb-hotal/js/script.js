@@ -138,9 +138,8 @@ function start() {
     })
     .then(() => {
       pageF = new PageF($pageF);
-      return changePageRightToLeft(pageF);
+      return pageF.run();
     })
-    .then(() => pageF.run())
     .then(() => {
       pageF.$root
         .css({ transition: 'all 1s ease-in-out' })
