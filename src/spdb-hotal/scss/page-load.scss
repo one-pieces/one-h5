@@ -3,18 +3,24 @@
   z-index: 1000;
 
   &__content {
+    width: 100%;
+    height: 400px;
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: rgba(45, 15, 11, .6);
-    &__text {
-      font-size: 60px;
+    &__card {
+      @include background-img('../img/card.png');
+      width: 346px;
+      height: 222px;
     }
     &__number {
+      margin-top: 50px;
       font-size: 58px;
     }
   }

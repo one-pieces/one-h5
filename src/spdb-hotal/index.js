@@ -1,5 +1,5 @@
 import './scss/index.scss';
-// import musicUrl from './media/music.mp3';
+import musicUrl from './media/music.mp3';
 import 'script-loader!util/resLoader';
 import 'script-loader!jquery/dist/jquery.min';
 import script from './js/script';
@@ -31,7 +31,9 @@ wxSetJsSdkConfig(window.location.href).then(() => {
 // 加载loading页资源
 const queue = new ResLoader({
   resources: [
-    require('./img/background.jpg')
+    require('./img/background.jpg'),
+    // require('./img/loading.png'),
+    require('./img/card.png')
   ],
   onProgress(current, total) {
     const percent = parseInt(current / total * 100);
@@ -45,30 +47,30 @@ const queue = new ResLoader({
     });
     $('#app').show();
 
-    // const $audio = document.getElementById('audio');
-    // $audio.src = musicUrl;
-    // $audio.loop = 'loop';
-    // $('#music').addClass('on');
-    // $audio.play();
-    // // 微信不能自动播放音频，需要在微信的回调函数中播放音频
-    // document.addEventListener('WeixinJSBridgeReady', function () {
-    //   WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
-    //     console.log('getNetworkType', e);
-    //     $('#music').addClass('on');
-    //     $audio.play();
-    //   });
-    // }, false);
-    // // 音乐事件
-    // $('#music').on('click', function() {
-    //   console.log('aaa', $audio.paused);
-    //   if ($audio.paused) {
-    //     $(this).addClass('on');
-    //     $audio.play();
-    //   } else {
-    //     $(this).removeClass('on');
-    //     $audio.pause();
-    //   }
-    // });
+    const $audio = document.getElementById('audio');
+    $audio.src = musicUrl;
+    $audio.loop = 'loop';
+    $('#music').addClass('on');
+    $audio.play();
+    // 微信不能自动播放音频，需要在微信的回调函数中播放音频
+    document.addEventListener('WeixinJSBridgeReady', function () {
+      WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+        console.log('getNetworkType', e);
+        $('#music').addClass('on');
+        $audio.play();
+      });
+    }, false);
+    // 音乐事件
+    $('#music').on('click', function() {
+      console.log('aaa', $audio.paused);
+      if ($audio.paused) {
+        $(this).addClass('on');
+        $audio.play();
+      } else {
+        $(this).removeClass('on');
+        $audio.pause();
+      }
+    });
     script.loadManifest();
   }
 });
