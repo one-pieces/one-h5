@@ -127,46 +127,43 @@ function start() {
     .then(() => pageC.bindClickEvent())
     .then(() => {
       pageD = new PageD($pageD);
-      return changePageScale(pageC, pageD, { x: '50%', y: '30%' });
+      return changePageScale(pageC, pageD, { x: '50%', y: '70%' });
     })
     .then(() => {
       return pageD.run();
     })
     .then(() => {
       pageE = new PageE($pageE);
-      pageE.run();
+      return pageE.run();
     })
-    .then(() => pageE.run())
     .then(() => {
       pageF = new PageF($pageF);
-      // return pageF.run();
       return changePageRightToLeft(pageF);
     })
     .then(() => pageF.run())
     .then(() => {
-      new Promise(resolve => {
-        pageG = new PageG($pageG);
-        pageF.$root.fadeOut(800);
-        pageG.$root.fadeIn(500, resolve);
-      });
+      pageF.$root
+        .css({ transition: 'all 1s ease-in-out' })
+        .css({ transform: 'translateY(100%)' })
+        .one('transitionend', () => pageF.$root.hide());
+      pageG = new PageG($pageG);
+      return moveLine(pageG.$root, 'bottom');
     })
     .then(() => pageG.run())
     .then(() => {
       pageH = new PageH($pageH);
       return changePageRightToLeft(pageH);
     })
-    .then(() => pageH.bindClickEvent())
+    .then(() => pageH.run())
     .then(() => {
       pageI = new PageI($pageI);
-      return changePageRightToLeft(pageI);
-    })
-    .then(() => {
-      pageH.$root.hide();
+      pageH.$root.fadeOut(1000);
+      pageI.$root.fadeIn(800);
       return pageI.run();
     })
     .then(() => {
       pageJ = new PageJ($pageJ);
-      return changePageFade(pageI, pageJ);
+      return changePageScale(pageI, pageJ, { x: '35%', y: '68%' });
     })
     .then(() => {
       pageI.$root.hide();
@@ -183,7 +180,7 @@ function start() {
       });
     })
     .then(() => {
-      changePageFade({ $root: $pageK }, { $root: $pageL });
+      changePageScale({ $root: $pageK }, { $root: $pageL }, { x: '63%', y: '45%' });
     });
 }
 
@@ -202,22 +199,12 @@ function changePageRightToLeft(page) {
   return movePageOfLeft(page);
 }
 
-function changePageFade(from, to) {
-  return new Promise(resolve => {
-    to.$root.fadeIn(500, () => {
-      to.$root.fadeOut(500, () => {
-        to.$root.fadeIn(800);
-        from.$root.fadeOut(1000, resolve);
-      });
-    });
-  });
-}
-
 
 
 function changePageScale(from, to, {x, y}) {
   return new Promise(resolve => {
     from.$root
+      .show()
       .css({ transformOrigin: `${x} ${y}` });
     setTimeout(() => {
       from.$root
@@ -228,6 +215,26 @@ function changePageScale(from, to, {x, y}) {
             .hide();
         });
       to.$root.fadeIn(800, resolve);
+    });
+  });
+}
+
+function moveLine(element, toDir, speed = 1) {
+  const transform = {
+    left: 'translateX(100%)',
+    right: 'translateX(-100%)',
+    top: 'translateY(100%)',
+    bottom: 'translateY(-100%)',
+  }[toDir];
+  return new Promise(resolve => {
+    element
+      .show()
+      .css({ transform });
+    setTimeout(() => {
+      element
+        .css({ transition: `all ${speed}s ease-in-out` })
+        .css({ transform: 'translate(0)' })
+        .one('transitionend', resolve);
     });
   });
 }

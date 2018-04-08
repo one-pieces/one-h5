@@ -21,7 +21,7 @@ PageD.prototype.girlFall = function() {
     this.$girlFall
       .css({ transition: 'all 1s ease-in-out'})
       .css({ top: '20%' })
-      .css({ opacity: 0 })
+      .css({ opacity: .1 })
       .one('transitionend', () => {
         this.$girlFall.hide();
         this.$girlSleep.fadeIn(1500, () => {

@@ -15,6 +15,6 @@
     transform: translateX(-50%);
   }
   &__wave {
-    @include background-obj('../img/f9/wave.png', 1125px, 230px, initial, initial, 0, 0);
+    @include background-obj('../img/f9/wave.png', 1125px, 2090px, 1770px, initial, initial, 0);
   }
 }

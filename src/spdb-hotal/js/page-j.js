@@ -22,7 +22,7 @@ PageJ.prototype.showMsg = function() {
     this.$msg.fadeIn(500).on('click', () => {
       this.$msg.fadeOut(500);
       this.$word.fadeOut(500);
-      this.$word1.fadeIn(500, () => setTimeout(resolve, 1000));
+      this.$word1.fadeIn(500, () => setTimeout(resolve, 2000));
     });
   });
 };
