@@ -7,6 +7,21 @@ html, body, #app {
   overflow: hidden;
 }
 
+.ani-scale {
+  animation: changeScale .8s ease-in-out;
+}
+
+@keyframes changeScale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
 @import 'page-load';
 @import 'page-a';
 @import 'page-b';

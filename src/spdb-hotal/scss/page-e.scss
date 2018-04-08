@@ -1,9 +1,29 @@
 .page-e {
   @include background-img('../img/f5/background.jpg');
-  background-size: 350% 350%;
-  background-position: 50% 40%;
+  transform: translateY(100%);
+  &.ani-change {
+    @include background-img('../img/f5/beizi.jpg');
+    background-size: 350%;
+    background-position: 50% 40%;
+    //animation: scale3 1.5 ease-in-out forwards;
+  }
 
   &__talk {
-    @include background-obj('../img/f5/talk.png', 776px, 343px, 20%, initial, initial, 10%);
+    @include background-obj('../img/f5/talk.png', 776px, 343px, 10%, initial, initial, 10%);
+  }
+
+  @keyframes scale3 {
+    0% {
+      //background-size: 350%;
+      //background-position: 50% 40%;
+      transform: scale(3.5);
+      transform-origin: 50% 40%;
+    }
+    100% {
+      //background-size: 100%;
+      //background-position: 50% 40%;
+      transform: scale(1);
+      transform-origin: 50% 40%;
+    }
   }
 }

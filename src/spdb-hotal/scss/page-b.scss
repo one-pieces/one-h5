@@ -1,7 +1,9 @@
 .page-b {
-  left: 100%;
   @include background-img('../img/f2/background.jpg');
 
+  &__girl {
+    @include background-obj('../img/f2/girl.png', 766px, 1760px, 12%, 0, initial, initial);
+  }
   &__talk {
     @include background-obj('../img/f2/talk.png', 836px, 366px, 2%, 20%, initial, initial);
   }
@@ -24,6 +26,9 @@
   &__bag-talk {
     @include background-obj('../img/f2/bag-talk.png', 594px, 270px, 0, 0, initial, initial);
     transform: translateY(-100%);
+  }
+  &__boom {
+    @include background-obj('../img/f2/boom.gif', 350px, 254px, initial, initial, 35%, 30%);
   }
   &__suitcase {
     @include background-obj('../img/f2/suitcase.png', 343px, 341px, initial, initial, 35%, 30%);

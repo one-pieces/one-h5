@@ -16,6 +16,8 @@ function loadManifest() {
       require('../img/f1/talk.png'),
       require('../img/f1/button.png'),
       require('../img/f2/background.jpg'),
+      require('../img/f2/boom.gif'),
+      require('../img/f2/girl.png'),
       require('../img/f2/talk.png'),
       require('../img/f2/bag.png'),
       require('../img/f2/bag-talk.png'),
@@ -38,8 +40,10 @@ function loadManifest() {
       require('../img/f4/wave-down.png'),
       require('../img/f4/wave-left.png'),
       require('../img/f4/wave-right.png'),
+      require('../img/f4/f5-sky.jpg'),
       require('../img/f5/background.jpg'),
       require('../img/f5/talk.png'),
+      require('../img/f5/beizi.jpg'),
       require('../img/f6/background.jpg'),
       require('../img/f6/bill.png'),
       require('../img/f6/hand.png'),
@@ -105,43 +109,37 @@ function start() {
   pageA.run()
     .then(() => {
       pageB = new PageB($pageB);
-      return changePageRightToLeft(pageB);
+      return changePageScale(pageA, pageB, { x: '70%', y: '23%' });
     })
     .then(() => {
-      pageA.$root.hide();
       return pageB.run();
     })
     .then(() => {
       pageC = new PageC($pageC);
-      return changePageLeftToRight(pageC)
+      return changePageScale(pageB, pageC, { x: '82%', y: '33%' });
     })
     .then(() => pageB.hideTalk())
     .then(() => pageC.run())
-    .then(() => hidePageRightToLeft(pageC))
+    .then(() => changePageScale(pageC, pageB, { x: '50%', y: '30%' }))
     .then(() => pageB.showSuitcase())
     .then(() => pageC.showCase())
-    .then(() => changePageLeftToRight(pageC))
+    .then(() => changePageScale(pageB, pageC, { x: '82%', y: '33%' }))
     .then(() => pageC.bindClickEvent())
     .then(() => {
       pageD = new PageD($pageD);
-      return changePageRightToLeft(pageD);
+      return changePageScale(pageC, pageD, { x: '50%', y: '30%' });
     })
     .then(() => {
-      pageB.$root.hide();
-      pageC.$root.hide();
       return pageD.run();
     })
     .then(() => {
       pageE = new PageE($pageE);
-      return new Promise(resolve => {
-        setTimeout(() => {
-          changePageFade(pageD, pageE).then(resolve);
-        }, 800);
-      });
+      pageE.run();
     })
     .then(() => pageE.run())
     .then(() => {
       pageF = new PageF($pageF);
+      // return pageF.run();
       return changePageRightToLeft(pageF);
     })
     .then(() => pageF.run())
@@ -204,14 +202,6 @@ function changePageRightToLeft(page) {
   return movePageOfLeft(page);
 }
 
-function changePageLeftToRight(page) {
-  return movePageOfLeft(page, '-100%');
-}
-
-function hidePageRightToLeft(page) {
-  return movePageOfLeft(page, 0, '-100%');
-}
-
 function changePageFade(from, to) {
   return new Promise(resolve => {
     to.$root.fadeIn(500, () => {
@@ -219,6 +209,25 @@ function changePageFade(from, to) {
         to.$root.fadeIn(800);
         from.$root.fadeOut(1000, resolve);
       });
+    });
+  });
+}
+
+
+
+function changePageScale(from, to, {x, y}) {
+  return new Promise(resolve => {
+    from.$root
+      .css({ transformOrigin: `${x} ${y}` });
+    setTimeout(() => {
+      from.$root
+        .addClass('ani-scale')
+        .one('animationend webkitAnimationEnd', () => {
+          from.$root
+            .removeClass('ani-scale')
+            .hide();
+        });
+      to.$root.fadeIn(800, resolve);
     });
   });
 }

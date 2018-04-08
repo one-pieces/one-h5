@@ -1,5 +1,4 @@
 .page-d {
-  left: 100%;
   @include background-img('../img/f4/background.jpg');
 
   &__girl-fall {
@@ -21,13 +20,16 @@
   }
   &__wave-left {
     @include background-obj('../img/f4/wave-left.png', 100%, 100%, 0, 0, initial, initial);
-    transform: translateX(-100%);
+    transform: translateY(100%);
   }
   &__wave-right {
     @include background-obj('../img/f4/wave-right.png', 100%, 1138px, initial, initial, 0, 0);
-    transform: translateX(100%);
+    transform: translateY(100%);
   }
   &__light {
     @include background-obj('../img/f4/light.png', 100%, 1570px, 0, 0, initial, initial);
+  }
+  &__sky {
+    @include background-obj('../img/f4/f5-sky.jpg', 100%, 100%, 0, 0, initial, initial);
   }
 }
