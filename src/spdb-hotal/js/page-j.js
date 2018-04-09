@@ -6,6 +6,7 @@ function PageJ (element, callback) {
   this.$msg = element.find('.page-j__msg');
   this.$word = element.find('.page-j__word');
   this.$word1 = element.find('.page-j__word1');
+  this.$hotalLogo = element.find('.page-j__hotal-logo');
 
   this.callback = callback;
 }
@@ -22,6 +23,7 @@ PageJ.prototype.showMsg = function() {
     this.$msg.fadeIn(500).on('click', () => {
       this.$msg.fadeOut(500);
       this.$word.fadeOut(500);
+      this.$hotalLogo.fadeIn(500);
       this.$word1.fadeIn(500, () => setTimeout(resolve, 2000));
     });
   });

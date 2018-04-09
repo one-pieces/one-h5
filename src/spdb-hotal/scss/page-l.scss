@@ -8,20 +8,19 @@
     @include background-img('../img/f13/button1.png');
     width: 674px;
     height: 144px;
-    //@include background-obj('../img/f13/button1.png', 674px, 144px, initial, 50%, 35%, initial);
-    //transform: translateX(-50%);
+    margin-bottom: 30px;
   }
   &__button2 {
     @include background-img('../img/f13/button2.png');
     width: 674px;
     height: 144px;
-    margin-top: 30px;
-    //@include background-obj('../img/f13/button2.png', 674px, 144px, initial, 50%, 27%, initial);
-    //transform: translateX(-50%);
   }
   &__logo {
     @include background-obj('../img/f13/logo.png', 710px, 123px, initial, 50%, 17%, initial);
     transform: translateX(-50%);
+  }
+  &__bottom {
+    @include background-obj('../img/f13/bottom.jpg', 1125px, 187px, initial, 0, 0, initial);
   }
   &__button-content {
     width: 100%;
@@ -34,15 +33,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  &__tip {
-    width: 100%;
-    font-size: 35px;
-    position: absolute;
-    bottom: 1%;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 }

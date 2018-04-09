@@ -13,4 +13,7 @@
   &__word1 {
     @include background-obj('../img/f11/word1.png', 636px, 393px, 30%, 19%, initial, initial);
   }
+  &__hotal-logo {
+    @include background-obj('../img/f11/hotal-logo.png', 555px, 293px, 16%, 32%, initial, initial);
+  }
 }
