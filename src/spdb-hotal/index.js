@@ -32,6 +32,7 @@ wxSetJsSdkConfig(window.location.href).then(() => {
 const queue = new ResLoader({
   resources: [
     require('./img/background.jpg'),
+    require('./img/top.png'),
     require('./img/card.png')
   ],
   onProgress(current, total) {
