@@ -70,16 +70,21 @@ PageB.prototype.showMessage = function() {
 PageB.prototype.showSuitcase = function() {
   return new Promise((resolve) => {
     this.$boom.fadeIn(800, () => {
-      this.$boom.hide();
-      this.$bag.fadeOut(1000);
+      this.$boom
+        .css({ transition: 'all .5s ease-in-out' })
+        .css({ transform: 'scale(5)' })
+        .one('transitionend', () => {
+          this.$boom.fadeOut(300);
+          this.$bag.fadeOut(800);
 
-      this.$suitcase.fadeIn(1000);
-      this.$suitcaseTalk.fadeIn(1000);
-      this.$suitcaseTip
-        .css({ transition: 'all 2s ease-in-out 2s' })
-        .css({ opacity: 0 })
-        .css({ transform: 'translateY(-300%)' })
-        .one('transitionend', resolve);
+          this.$suitcase.fadeIn(800);
+          this.$suitcaseTalk.fadeIn(800);
+          this.$suitcaseTip
+            .css({ transition: 'all 2s ease-in-out 2s' })
+            .css({ opacity: 0 })
+            .css({ transform: 'translateY(-300%)' })
+            .one('transitionend', resolve);
+        });
     });
   });
 };
