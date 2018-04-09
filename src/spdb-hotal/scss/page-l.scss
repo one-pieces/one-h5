@@ -2,7 +2,9 @@
   @include background-img('../img/f13/background.jpg');
 
   &__banner {
-    @include background-obj('../img/f13/banner.png', 1125px, 55%, 0, 0, initial, initial);
+    @include background-obj('../img/f13/banner.png', 1053px, 1257px, 0, 50%, initial, initial);
+    transform: scale(.9) translateX(-50%);
+    transform-origin: 0 0;
   }
   &__button1 {
     @include background-img('../img/f13/button1.png');
@@ -16,7 +18,7 @@
     height: 144px;
   }
   &__logo {
-    @include background-obj('../img/f13/logo.png', 710px, 123px, initial, 50%, 17%, initial);
+    @include background-obj('../img/f13/logo.png', 710px, 123px, initial, 50%, 14%, initial);
     transform: translateX(-50%);
   }
   &__bottom {
@@ -27,7 +29,7 @@
     height: 318px;
     font-size: 35px;
     position: absolute;
-    top: 57%;
+    top: 60%;
     left: 0;
     display: flex;
     flex-direction: column;
