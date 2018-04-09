@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size: 5.68889px;">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -140,9 +140,9 @@
           if (!clientWidth) return;
           docEl.style.fontSize = 16 * (clientWidth / 1125) + 'px';
           //宽与高度
-          document.body.style.height = clientWidth * (1125 / 2000) + "px"
+          document.body.style.height = clientWidth * (1125 / 2000) + 'px';
           config.clientWidth = clientWidth;
-          config.clientHeight =  clientWidth * (1125 / 2000)
+          config.clientHeight =  clientWidth * (1125 / 2000);
         };
       win.addEventListener(resizeEvt, recalc, false);
       doc.addEventListener('DOMContentLoaded', recalc, false);
