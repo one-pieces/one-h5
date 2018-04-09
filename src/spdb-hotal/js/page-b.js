@@ -38,8 +38,20 @@ function moveLine(element, toDir, speed = 1) {
   });
 }
 
-PageB.prototype.girlWalk = function() {
-  return moveLine(this.$girl, 'right', 1.5);
+// PageB.prototype.girlWalk = function() {
+//   return moveLine(this.$girl, 'right', 1.5);
+// };
+
+PageB.prototype.showGirl = function() {
+  return new Promise(resolve => {
+    this.$girl
+      .show()
+      .addClass('animated flash')
+      .on('animationend webkitAnimationEnd', () => {
+        this.$girl.removeClass('animated flash');
+        resolve();
+      });
+  });
 };
 
 PageB.prototype.showMessage = function() {
@@ -80,7 +92,7 @@ PageB.prototype.hideTalk = function() {
 };
 
 PageB.prototype.run = function() {
-  return this.girlWalk()
+  return this.showGirl()
     .then(() => this.showMessage())
     .then(() => {
       return new Promise((resolve) => {
