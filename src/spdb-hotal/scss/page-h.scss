@@ -10,10 +10,10 @@
     transform: translateX(-50%);
   }
   &__hongbao {
-    @include background-obj('../img/f9/hongbao.jpg', 1125px, 1000px, initial, 50%, 1%, initial);
+    @include background-obj('../img/f9/hongbao.jpg', 1125px, 50%, initial, 50%, -5%, initial);
     transform: translateX(-50%);
   }
   &__wave {
-    @include background-obj('../img/f9/wave.png', 1125px, 2090px, 1770px, initial, initial, 0);
+    @include background-obj('../img/f9/wave.png', 1125px, 2090px, 90%, initial, initial, 0);
   }
 }
