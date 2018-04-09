@@ -141,6 +141,8 @@ function start() {
       return pageF.run();
     })
     .then(() => {
+      // pageD.$root.hide();
+      // pageE.$root.hide();
       pageF.$root
         .css({ transition: 'all 1s ease-in-out' })
         .css({ transform: 'translateY(100%)' })
@@ -151,7 +153,7 @@ function start() {
     .then(() => pageG.run())
     .then(() => {
       pageH = new PageH($pageH);
-      return changePageRightToLeft(pageH);
+      return moveLine(pageH.$root, 'left');
     })
     .then(() => pageH.run())
     .then(() => {
@@ -182,23 +184,6 @@ function start() {
       changePageScale({ $root: $pageK }, { $root: $pageL }, { x: '63%', y: '45%' });
     });
 }
-
-// 从 left: 100% 到 left: 0 移动页面，即从屏幕右侧向左侧滑动
-// 从 left: -100% 到 left: 0 移动页面，即从屏幕左侧向右侧滑动
-function movePageOfLeft(page, from = '100%', to = 0) {
-  return new Promise(resolve => {
-    page.$root
-      .css({ left: from, transition: 'left 1s ease-in-out'})
-      .css({ left: to })
-      .one('transitionend', resolve);
-  });
-}
-
-function changePageRightToLeft(page) {
-  return movePageOfLeft(page);
-}
-
-
 
 function changePageScale(from, to, {x, y}) {
   return new Promise(resolve => {

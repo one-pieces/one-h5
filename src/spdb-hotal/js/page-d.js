@@ -1,6 +1,6 @@
 function PageD (element, callback) {
   // 根元素
-  this.$root = element.show();
+  this.$root = element;
 
   this.$girlFall = element.find('.page-d__girl-fall');
   this.$girlSleep = element.find('.page-d__girl-sleep');

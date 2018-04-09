@@ -23,7 +23,7 @@ function moveLine(element, toDir, speed = 1) {
       element
         .css({ transition: `all ${speed}s ease-in-out` })
         .css({ transform: 'translate(0)' })
-        .one('transitionend', resolve);
+        .one('transitionend', () => setTimeout(resolve, 800));
     });
   });
 }
@@ -31,10 +31,6 @@ function moveLine(element, toDir, speed = 1) {
 PageE.prototype.run = function() {
   return moveLine(this.$root, 'top', 1.5).then(() => {
     return new Promise((resolve) => {
-    // this.$talk.fadeIn(1000, () => {
-      // this.$talk
-      //   .css({ transition: 'all 1.5s ease-in-out'})
-      //   .css({ transform: 'scale(0.7)' });
       this.$beizi.fadeIn(500);
       setTimeout(() => {
         this.$beizi
@@ -42,7 +38,6 @@ PageE.prototype.run = function() {
           .css({ backgroundSize: '100% 100%' })
           .one('transitionend', resolve);
       });
-    // });
     });
   });
 };
