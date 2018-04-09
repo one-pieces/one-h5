@@ -25,7 +25,7 @@ PageD.prototype.girlFall = function() {
       .one('transitionend', () => {
         this.$girlFall.hide();
         this.$girlSleep.fadeIn(1500, () => {
-          this.$talk.fadeIn(1000, resolve);
+          this.$talk.fadeIn(1000, () => setTimeout(resolve, 800));
         });
       });
   });
