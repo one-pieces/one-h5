@@ -162,7 +162,7 @@ function start() {
     })
     .then(() => {
       pageJ = new PageJ($pageJ);
-      return changePageScale(pageI, pageJ, { x: '55%', y: '65%' });
+      return changePageScale(pageI, pageJ, { x: '65%', y: '65%' });
     })
     .then(() => {
       pageI.$root.hide();
