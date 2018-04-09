@@ -64,7 +64,7 @@ PageB.prototype.showSuitcase = function() {
       this.$suitcase.fadeIn(1000);
       this.$suitcaseTalk.fadeIn(1000);
       this.$suitcaseTip
-        .css({ transition: 'all 1s ease-in-out 2s' })
+        .css({ transition: 'all 2s ease-in-out 2s' })
         .css({ opacity: 0 })
         .css({ transform: 'translateY(-300%)' })
         .one('transitionend', resolve);
@@ -90,7 +90,7 @@ PageB.prototype.run = function() {
         this.$bag.fadeIn(1000);
         this.$bagTalk.fadeIn(1000);
         this.$bagTip
-          .css({ transition: 'all 1s ease-in-out 2s' })
+          .css({ transition: 'all 2s ease-in-out 2s' })
           .css({ opacity: 0 })
           .css({ transform: 'translateY(-300%)' })
           .one('transitionend', resolve);

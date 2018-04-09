@@ -19,7 +19,7 @@ function PageD (element, callback) {
 PageD.prototype.girlFall = function() {
   return new Promise((resolve) => {
     this.$girlFall
-      .css({ transition: 'all 1.5s ease-in-out'})
+      .css({ transition: 'all 2s ease-in-out'})
       .css({ top: '20%' })
       .css({ opacity: .1 })
       .one('transitionend', () => {
@@ -58,12 +58,14 @@ PageD.prototype.run = function() {
     .then(() => this.showWave(this.$waveDown))
     .then(() => {
       return new Promise((resolve) => {
-        this.$sky.fadeIn(500);
-        this.$light.hide();
-        this.$lang
-          .css({ transition: 'all 1s ease-in-out'})
-          .css({ transform: 'translateY(100%)' })
-          .one('transitionend', resolve);
+        setTimeout(() => {
+          this.$sky.fadeIn(500);
+          this.$light.hide();
+          this.$lang
+            .css({ transition: 'all 1s ease-in-out'})
+            .css({ transform: 'translateY(100%)' })
+            .one('transitionend', resolve);
+        }, 1000);
       });
     });
 };

@@ -15,7 +15,7 @@ PageI.prototype.run = function() {
       this.$coin
         .css({ transition: 'all 1.5s ease-in-out'})
         .css({ top: '70%' })
-        .one('transitionend', resolve);
+        .one('transitionend', () => setTimeout(resolve, 2000));
     });
   })
 };

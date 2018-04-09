@@ -175,7 +175,7 @@ function start() {
           .fadeIn(500)
           .css({ transition: 'all 1s ease-in-out'})
           .css({ backgroundSize: '100%' })
-          .one('transitionend', () => setTimeout(resolve, 800));
+          .one('transitionend', () => setTimeout(resolve, 2000));
       });
     })
     .then(() => {
@@ -213,7 +213,7 @@ function changePageScale(from, to, {x, y}) {
             .removeClass('ani-scale')
             .hide();
         });
-      to.$root.fadeIn(800, resolve);
+      to.$root.fadeIn(1000, resolve);
     });
   });
 }

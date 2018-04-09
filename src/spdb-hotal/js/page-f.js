@@ -28,12 +28,14 @@ PageF.prototype.run = function() {
         .css({ transition: 'all 1.5s ease-in-out'})
         .css({ backgroundSize: '100% 100%' })
         .one('transitionend', () => {
-          this.showBill().then(() => {
-            this.$shell2.hide();
-            this.$shell.show().on('click', () => {
-              this.$talk.fadeIn(500, () => setTimeout(resolve, 1000));
+          setTimeout(() => {
+            this.showBill().then(() => {
+              this.$shell2.hide();
+              this.$shell.show().on('click', () => {
+                this.$talk.fadeIn(500, () => setTimeout(resolve, 1000));
+              });
             });
-          });
+          }, 1000);
         });
     });
   });
