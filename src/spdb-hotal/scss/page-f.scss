@@ -7,10 +7,10 @@
     @include background-obj('../img/f6/talk.png', 776px, 343px, -150%, -150%, initial, initial);
   }
   &__shell {
-    @include background-obj('../img/f6/shell.gif', 315px, 227px, initial, initial, 10%, 8%);
+    @include background-obj('../img/f6/shell.gif', 315px, 227px, initial, initial, 11%, 10%);
   }
   &__shell2 {
-    @include background-obj('../img/f6/shell2.png', 315px, 227px, initial, initial, 10%, 8%);
+    @include background-obj('../img/f6/shell2.png', 315px, 227px, initial, initial, 11%, 10%);
   }
   &__hand {
     @include background-obj('../img/f6/hand.png', 763px, 939px, 18%, initial, initial, 0);
@@ -20,6 +20,6 @@
     @include background-obj('../img/f6/bill.png', 397px, 596px, 1%, 22%, initial, initial);
   }
   &__hotals {
-    @include background-obj('../img/f6/hotals.png', 322px, 233px, initial, initial, 0, 0);
+    @include background-obj('../img/f6/hotals.png', 322px, 233px, initial, initial, 1%, 2%);
   }
 }
