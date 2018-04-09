@@ -39,7 +39,7 @@ function moveLine(element, toDir, speed = 1) {
 }
 
 PageB.prototype.girlWalk = function() {
-  return moveLine(this.$girl, 'right');
+  return moveLine(this.$girl, 'right', 1.5);
 };
 
 PageB.prototype.showMessage = function() {
