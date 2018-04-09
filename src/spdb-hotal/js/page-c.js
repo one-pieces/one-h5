@@ -4,6 +4,7 @@ function PageC (element, callback) {
 
   this.$hongbao = element.find('.page-c__hongbao');
   this.$hongbao2 = element.find('.page-c__hongbao2');
+  this.$hongbao3 = element.find('.page-c__hongbao3');
   this.$paizi = element.find('.page-c__paizi');
   this.$talk = element.find('.page-c__talk');
   this.$button = element.find('.page-c__button');
@@ -32,7 +33,10 @@ PageC.prototype.run = function() {
   return new Promise((resolve) => {
     this.$hongbao.on('click', () => {
       this.$hongbao.fadeOut(500);
-      this.$hongbao2.fadeIn(1000, () => setTimeout(resolve, 1000));
+      this.$hongbao2.fadeIn(300, () => {
+        this.$hongbao3.fadeIn(300, () =>
+          this.$hongbao3.fadeOut(300, () => setTimeout(resolve, 1500)));
+      });
     });
   });
 };

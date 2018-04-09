@@ -29,6 +29,7 @@ function loadManifest() {
       require('../img/f3/button.png'),
       require('../img/f3/hongbao.gif'),
       require('../img/f3/hongbao2.png'),
+      require('../img/f3/hongbao3.png'),
       require('../img/f3/paizi.png'),
       require('../img/f3/talk.png'),
       require('../img/f4/background.jpg'),
@@ -41,7 +42,7 @@ function loadManifest() {
       require('../img/f4/wave-left.png'),
       require('../img/f4/wave-right.png'),
       require('../img/f4/f5-sky.jpg'),
-      require('../img/f5/background.jpg'),
+      require('../img/f5/background.png'),
       require('../img/f5/talk.png'),
       require('../img/f5/beizi.jpg'),
       require('../img/f6/background.jpg'),
@@ -120,7 +121,7 @@ function start() {
     })
     .then(() => pageB.hideTalk())
     .then(() => pageC.run())
-    .then(() => changePageScale(pageC, pageB, { x: '50%', y: '30%' }))
+    .then(() => changePageScaleSmall(pageC, pageB, { x: '82%', y: '33%' }))
     .then(() => pageB.showSuitcase())
     .then(() => pageC.showCase())
     .then(() => changePageScale(pageB, pageC, { x: '82%', y: '33%' }))
@@ -199,6 +200,23 @@ function changePageScale(from, to, {x, y}) {
             .hide();
         });
       to.$root.fadeIn(1000, resolve);
+    });
+  });
+}
+
+function changePageScaleSmall(from, to, {x, y}) {
+  return new Promise(resolve => {
+    from.$root.fadeOut(500);
+    to.$root
+      .show()
+      .css({ transformOrigin: `${x} ${y}` });
+    setTimeout(() => {
+      to.$root
+        .addClass('ani-scale-small')
+        .one('animationend webkitAnimationEnd', () => {
+          to.$root.removeClass('ani-scale-small');
+          setTimeout(resolve, 800);
+        });
     });
   });
 }

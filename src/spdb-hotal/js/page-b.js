@@ -49,7 +49,7 @@ PageB.prototype.showGirl = function() {
       .addClass('animated flash')
       .on('animationend webkitAnimationEnd', () => {
         this.$girl.removeClass('animated flash');
-        resolve();
+        setTimeout(resolve, 500);
       });
   });
 };

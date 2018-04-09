@@ -18,6 +18,10 @@ html, body, #app {
   animation: changeScale 1.5s ease-in-out;
 }
 
+.ani-scale-small {
+  animation: changeScaleSmall 1.5s ease-in-out;
+}
+
 @keyframes changeScale {
   0% {
     transform: scale(1);
@@ -26,6 +30,17 @@ html, body, #app {
   100% {
     transform: scale(10);
     opacity: 0;
+  }
+}
+
+@keyframes changeScaleSmall {
+  0% {
+    transform: scale(10);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

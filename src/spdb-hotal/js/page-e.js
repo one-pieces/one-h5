@@ -31,12 +31,15 @@ function moveLine(element, toDir, speed = 1) {
 PageE.prototype.run = function() {
   return moveLine(this.$root, 'top', 1.5).then(() => {
     return new Promise((resolve) => {
-      this.$beizi.fadeIn(500);
-      setTimeout(() => {
-        this.$beizi
-          .css({ transition: 'all 1.5s ease-in-out'})
-          .css({ backgroundSize: '100% 100%' })
-          .one('transitionend', resolve);
+      this.$talk.fadeIn(1000, () => {
+        this.$talk.fadeOut(500);
+        this.$beizi.fadeIn(500);
+        setTimeout(() => {
+          this.$beizi
+            .css({ transition: 'all 1.5s ease-in-out'})
+            .css({ backgroundSize: '100% 100%' })
+            .one('transitionend', resolve);
+        });
       });
     });
   });
