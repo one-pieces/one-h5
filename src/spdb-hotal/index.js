@@ -11,7 +11,7 @@ wxSetJsSdkConfig(window.location.href).then(() => {
     title: '浦发酒店银行',
     desc: '为酒店银行打call，兑现完美假期！',
     link: window.location.href,
-    imgUrl: 'http://test.tron-m.com/oib/luoshi/luoshizhenduan/static/icon.png',
+    imgUrl: 'http://test.tron-m.com/oib/luoshi/spdb-hotal/img/icon.png',
     success() {
       // 用户确认分享后执行的回调函数
       // $('#fourth .fourth__mark').hide();
