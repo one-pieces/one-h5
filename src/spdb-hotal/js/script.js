@@ -142,8 +142,8 @@ function start() {
       return pageF.run();
     })
     .then(() => {
-      // pageD.$root.hide();
-      // pageE.$root.hide();
+      pageD.$root.hide();
+      pageE.$root.hide();
       pageF.$root
         .css({ transition: 'all 1s ease-in-out' })
         .css({ transform: 'translateY(100%)' })
@@ -153,6 +153,7 @@ function start() {
     })
     .then(() => pageG.run())
     .then(() => {
+      pageG.$root.hide();
       pageH = new PageH($pageH);
       return moveLine(pageH.$root, 'left');
     })
@@ -173,7 +174,7 @@ function start() {
     })
     .then(() => {
       pageJ.$root.fadeOut(800);
-      $pageL.fadeIn(500)
+      $pageL.fadeIn(800)
     })
     // .then(() => {
     //   return new Promise(resolve => {
@@ -202,8 +203,8 @@ function changePageScale(from, to, {x, y}) {
           from.$root
             .removeClass('ani-scale')
             .hide();
+          to.$root.fadeIn(500, resolve);
         });
-      to.$root.fadeIn(1000, resolve);
     });
   });
 }

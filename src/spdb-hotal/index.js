@@ -8,8 +8,8 @@ import { wxSetJsSdkConfig } from 'util/wx-util';
 // 分享设置
 wxSetJsSdkConfig(window.location.href).then(() => {
   const params = {
-    title: '浦发酒店银行',
-    desc: '为酒店银行打call，兑现完美假期！',
+    title: '酒店银行，兑现你的完美假期！',
+    desc: '酒店银行，兑现你的完美假期！',
     link: window.location.href,
     imgUrl: 'http://test.tron-m.com/oib/luoshi/spdb-hotal/static/icon.png',
     success() {

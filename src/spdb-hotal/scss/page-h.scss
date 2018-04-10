@@ -2,7 +2,7 @@
   @include background-img('../img/f9/background.jpg');
 
   &__msg {
-    @include background-obj('../img/f9/msg.png', 969px, 25%, 21%, 50%, initial, initial);
+    @include background-obj('../img/f9/msg.png', 969px, 25%, 11%, 50%, initial, initial);
     transform: translateX(-50%);
   }
   &__button {
@@ -10,7 +10,7 @@
     transform: translateX(-50%);
   }
   &__hongbao {
-    @include background-obj('../img/f9/hongbao.jpg', 1125px, 50%, initial, 50%, -5%, initial);
+    @include background-obj('../img/f9/hongbao.jpg', 1125px, 50%, initial, 50%, 0, initial);
     transform: translateX(-50%);
   }
   &__wave {
