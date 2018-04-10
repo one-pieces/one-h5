@@ -144,12 +144,12 @@ function start() {
     .then(() => {
       pageD.$root.hide();
       pageE.$root.hide();
-      pageF.$root.hide();
       pageH = new PageH($pageH);
       return moveLine(pageH.$root, 'left');
     })
     .then(() => pageH.run())
     .then(() => {
+      pageF.$root.hide();
       pageI = new PageI($pageI);
       pageH.$root.fadeOut(1000);
       pageI.$root.fadeIn(800);
