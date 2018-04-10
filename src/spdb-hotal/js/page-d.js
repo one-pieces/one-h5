@@ -24,8 +24,8 @@ PageD.prototype.girlFall = function() {
       .css({ opacity: .1 })
       .one('transitionend', () => {
         this.$girlFall.hide();
-        this.$girlSleep.fadeIn(1500, () => {
-          this.$talk.fadeIn(1000, () => setTimeout(resolve, 800));
+        this.$girlSleep.fadeIn(1000, () => {
+          this.$talk.fadeIn(500, () => setTimeout(resolve, 500));
         });
       });
   });

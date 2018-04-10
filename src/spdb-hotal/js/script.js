@@ -172,18 +172,22 @@ function start() {
       return pageJ.run();
     })
     .then(() => {
-      return new Promise(resolve => {
-        pageJ.$root.fadeOut(300);
-        $pageK
-          .fadeIn(500)
-          .css({ transition: 'all 1s ease-in-out'})
-          .css({ backgroundSize: '100%' })
-          .one('transitionend', () => setTimeout(resolve, 2000));
-      });
+      pageJ.$root.fadeOut(800);
+      $pageL.fadeIn(500)
     })
-    .then(() => {
-      changePageScale({ $root: $pageK }, { $root: $pageL }, { x: '63%', y: '45%' });
-    });
+    // .then(() => {
+    //   return new Promise(resolve => {
+    //     pageJ.$root.fadeOut(300);
+    //     $pageK
+    //       .fadeIn(500)
+    //       .css({ transition: 'all 1s ease-in-out'})
+    //       .css({ backgroundSize: '100%' })
+    //       .one('transitionend', () => setTimeout(resolve, 2000));
+    //   });
+    // })
+    // .then(() => {
+    //   changePageScale({ $root: $pageK }, { $root: $pageL }, { x: '63%', y: '45%' });
+    // });
 }
 
 function changePageScale(from, to, {x, y}) {
