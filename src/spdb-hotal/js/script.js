@@ -110,7 +110,7 @@ function start() {
   pageA.run()
     .then(() => {
       pageB = new PageB($pageB);
-      return changePageScale(pageA, pageB, { x: '70%', y: '23%' });
+      return changePageScale(pageA, pageB, { x: '70%', y: '13%' });
     })
     .then(() => {
       return pageB.run();
