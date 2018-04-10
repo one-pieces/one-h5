@@ -25,7 +25,7 @@ PageH.prototype.run = function() {
     //           .css({ top: '1770px' });
     //       });
     //   });
-    this.$hongbao.on('click', () => {
+    this.$button.on('click', () => {
       this.$wave
         .css({ transition: 'all 1.5s ease-in-out'})
         .css({ top: 0 })
