@@ -147,9 +147,11 @@ function start() {
       pageH = new PageH($pageH);
       return moveLine(pageH.$root, 'left');
     })
-    .then(() => pageH.run())
     .then(() => {
       pageF.$root.hide();
+      return pageH.run();
+    })
+    .then(() => {
       pageI = new PageI($pageI);
       pageH.$root.fadeOut(1000);
       pageI.$root.fadeIn(800);
