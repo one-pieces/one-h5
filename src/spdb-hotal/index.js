@@ -1,5 +1,4 @@
 import './scss/index.scss';
-import musicUrl from './media/music.mp3';
 import 'script-loader!util/resLoader';
 import 'script-loader!jquery/dist/jquery.min';
 import script from './js/script';
@@ -49,7 +48,6 @@ const queue = new ResLoader({
     $('#app').show();
 
     const $audio = document.getElementById('audio');
-    $audio.src = musicUrl;
     $audio.loop = 'loop';
     $('#music').addClass('on');
     $audio.play();
