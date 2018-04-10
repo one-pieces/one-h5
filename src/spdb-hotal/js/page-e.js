@@ -29,7 +29,7 @@ function moveLine(element, toDir, speed = 1) {
 }
 
 PageE.prototype.run = function() {
-  return moveLine(this.$root, 'top', 1.5).then(() => {
+  return moveLine(this.$root, 'top', 1).then(() => {
     return new Promise((resolve) => {
       // this.$talk.fadeIn(1000, () => {
       //   this.$talk.fadeOut(1000, () => {

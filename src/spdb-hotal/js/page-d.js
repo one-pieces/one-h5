@@ -19,7 +19,7 @@ function PageD (element, callback) {
 PageD.prototype.girlFall = function() {
   return new Promise((resolve) => {
     this.$girlFall
-      .css({ transition: 'all 1.5s ease-in-out'})
+      .css({ transition: 'all 1s ease-in-out'})
       .css({ top: '20%' })
       .css({ opacity: .1 })
       .one('transitionend', () => {
