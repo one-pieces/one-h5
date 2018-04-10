@@ -2,7 +2,7 @@
   @include background-img('../img/f9/background.jpg');
 
   &__msg {
-    @include background-obj('../img/f9/msg.png', 969px, 25%, 11%, 50%, initial, initial);
+    @include background-obj('../img/f9/msg.png', 969px, 506px, 11%, 50%, initial, initial);
     transform: translateX(-50%);
   }
   &__button {

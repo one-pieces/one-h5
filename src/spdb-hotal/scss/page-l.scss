@@ -18,7 +18,7 @@
     height: 144px;
   }
   &__logo {
-    @include background-obj('../img/f13/logo.png', 710px, 123px, initial, 50%, 14%, initial);
+    @include background-obj('../img/logo.png', 710px, 123px, initial, 50%, 14%, initial);
     transform: translateX(-50%);
   }
   &__bottom {

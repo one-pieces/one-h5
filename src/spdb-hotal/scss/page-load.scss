@@ -20,7 +20,7 @@
     align-items: center;
     color: rgba(45, 15, 11, .6);
     &__logo {
-      @include background-img('../img/f13/logo.png');
+      @include background-img('../img/logo.png');
       width: 710px;
       height: 123px;
       margin-bottom: 50px;
