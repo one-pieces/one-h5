@@ -9,7 +9,7 @@ import { wxSetJsSdkConfig } from 'util/wx-util';
 wxSetJsSdkConfig(window.location.href).then(() => {
   const params = {
     title: '酒店银行，兑现你的完美假期！',
-    desc: '酒店银行，兑现你的完美假期！',
+    desc: '五星酒店攻略了解一下！',
     link: window.location.href,
     imgUrl: 'http://test.tron-m.com/oib/luoshi/spdb-hotal/static/icon.png',
     success() {
