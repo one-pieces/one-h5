@@ -2,7 +2,7 @@ function PageE (element, callback) {
   // 根元素
   this.$root = element;
 
-  this.$talk = element.find('.page-e__talk');
+  // this.$talk = element.find('.page-e__talk');
   this.$beizi = element.find('.page-e__beizi');
 
   this.callback = callback;
@@ -31,8 +31,8 @@ function moveLine(element, toDir, speed = 1) {
 PageE.prototype.run = function() {
   return moveLine(this.$root, 'top', 1.5).then(() => {
     return new Promise((resolve) => {
-      this.$talk.fadeIn(1000, () => {
-        this.$talk.fadeOut(1000, () => {
+      // this.$talk.fadeIn(1000, () => {
+      //   this.$talk.fadeOut(1000, () => {
           this.$beizi.fadeIn(500);
           setTimeout(() => {
             this.$beizi
@@ -40,8 +40,8 @@ PageE.prototype.run = function() {
               .css({ backgroundSize: '100% 100%' })
               .one('transitionend', resolve);
           });
-        });
-      });
+        // });
+      // });
     });
   });
 };

@@ -19,12 +19,12 @@ function PageD (element, callback) {
 PageD.prototype.girlFall = function() {
   return new Promise((resolve) => {
     this.$girlFall
-      .css({ transition: 'all 2s ease-in-out'})
+      .css({ transition: 'all 1.5s ease-in-out'})
       .css({ top: '20%' })
       .css({ opacity: .1 })
       .one('transitionend', () => {
         this.$girlFall.hide();
-        this.$girlSleep.fadeIn(1000, () => {
+        this.$girlSleep.fadeIn(800, () => {
           this.$talk.fadeIn(500, () => setTimeout(resolve, 500));
         });
       });

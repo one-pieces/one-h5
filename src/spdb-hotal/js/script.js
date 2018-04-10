@@ -144,16 +144,7 @@ function start() {
     .then(() => {
       pageD.$root.hide();
       pageE.$root.hide();
-      pageF.$root
-        .css({ transition: 'all 1s ease-in-out' })
-        .css({ transform: 'translateY(100%)' })
-        .one('transitionend', () => pageF.$root.hide());
-      pageG = new PageG($pageG);
-      return moveLine(pageG.$root, 'bottom');
-    })
-    .then(() => pageG.run())
-    .then(() => {
-      pageG.$root.hide();
+      pageF.$root.hide();
       pageH = new PageH($pageH);
       return moveLine(pageH.$root, 'left');
     })
