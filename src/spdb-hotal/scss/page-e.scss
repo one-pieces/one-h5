@@ -1,15 +1,15 @@
 .page-e {
-  @include background-img('../img/f5/background.png');
+  @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f5/background.png');
   transform: translateY(100%);
 
   &__beizi {
-    @include background-obj('../img/f5/beizi.jpg', 100%, 100%, 0, 0, initial, initial);
+    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f5/beizi.jpg', 100%, 100%, 0, 0, initial, initial);
     background-size: 350% 350%;
     background-position: 50% 40%;
   }
 
   &__talk {
-    @include background-obj('../img/f5/talk.png', 776px, 343px, 10%, initial, initial, 10%);
+    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f5/talk.png', 776px, 343px, 10%, initial, initial, 10%);
   }
 
   @keyframes scale3 {

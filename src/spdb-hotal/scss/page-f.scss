@@ -1,25 +1,25 @@
 .page-f {
-  @include background-img('../img/f6/background.jpg');
+  @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f6/background.jpg');
   background-size: 400% 400%;
   background-position: 70% 40%;
 
   &__talk {
-    @include background-obj('../img/f6/talk.png', 776px, 343px, -150%, -150%, initial, initial);
+    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f6/talk.png', 776px, 343px, -150%, -150%, initial, initial);
   }
   &__shell {
-    @include background-obj('../img/f6/shell.gif', 315px, 227px, initial, initial, 11%, 10%);
+    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f6/shell.gif', 315px, 227px, initial, initial, 11%, 10%);
   }
   &__shell2 {
-    @include background-obj('../img/f6/shell2.png', 315px, 227px, initial, initial, 11%, 10%);
+    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f6/shell2.png', 315px, 227px, initial, initial, 11%, 10%);
   }
   &__hand {
-    @include background-obj('../img/f6/hand.png', 763px, 939px, 18%, initial, initial, 0);
+    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f6/hand.png', 763px, 939px, 18%, initial, initial, 0);
     transform: translateX(100%);
   }
   &__bill {
-    @include background-obj('../img/f6/bill.png', 397px, 596px, 1%, 22%, initial, initial);
+    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f6/bill.png', 397px, 596px, 1%, 22%, initial, initial);
   }
   &__hotals {
-    @include background-obj('../img/f6/hotals.png', 322px, 233px, initial, initial, 1%, 2%);
+    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f6/hotals.png', 322px, 233px, initial, initial, 1%, 2%);
   }
 }
