@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>光大信用卡跨年盛宴</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.5/css/swiper.min.css">
+  <link rel="stylesheet" href="./style/index.css">
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="item in slideList">
+          <img :src="item"/>
+        </div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="index-container container">
+      <div class="list-item" @click="gotoTheme(item.id)" v-for="item in list">
+        <span class="order-number">0{{item.id}}</span>
+        <span class="label">{{item.label}}</span>
+        <div class="button"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        slideList: window.themeList.map(function(item) {
+          return item.img;
+        }),
+        list: window.themeList
+      },
+      methods: {
+        gotoTheme(id) {
+          window.location.href = './theme.html?id=' + id;
+        }
+      }
+    });
+    // 需在Vue启动后初始化
+    var mySwiper = new Swiper ('.swiper-container', {
+      loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      effect: 'fade',
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+  </script>
+  <style>
+    .index-container {
+      padding: 18px 25px 20px 20px;
+    }
+    .index-container .list-item {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 20px;
+      background: #d43141;
+      margin-bottom: 8px;
+    }
+    .index-container .list-item .order-number {
+      height: 100%;
+      width: 16%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom-right-radius: 30px;
+      border-top-right-radius: 30px;
+      background: #b31927;
+    }
+    .index-container .list-item .label {
+      flex: 1;
+    }
+    .index-container .list-item .button {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      background: url("./img/button.png") no-repeat;
+      background-size: contain;
+    }
+  </style>
+</body>
+</html>

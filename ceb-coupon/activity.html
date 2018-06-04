@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>光大信用卡跨年盛宴</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="./style/index.css">
+  <script src="./js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="activity__header">
+    <img :src="activity.bannerImg" />
+  </div>
+  <div class="activity__container container">
+    <div class="container__title">
+      {{activity.title}}
+    </div>
+    <div class="group-item">
+      <div class="item-label">活动周期</div>
+      <div class="item-content" v-html="activity.period"></div>
+    </div>
+    <div class="group-item" v-if="activity.time">
+      <div class="item-label">活动时间</div>
+      <div class="item-content" v-html="activity.time"></div>
+    </div>
+    <div class="group-item">
+      <div class="item-label">活动对象</div>
+      <div class="item-content" v-html="activity.people"></div>
+    </div>
+    <div class="group-item">
+      <div class="item-label">活动内容</div>
+      <div class="item-content" v-html="activity.content"></div>
+    </div>
+    <div class="group-item" v-if="activity.method">
+      <div class="item-label">参与方式</div>
+      <div class="item-content" v-html="activity.method"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="back-button" @click="goback()"></div>
+  </div>
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data() {
+      const id = window.location.search.split('id=')[1].split('&')[0];
+      return {
+        activity: window.activityList.find(item => item.id == id),
+      };
+    },
+    methods: {
+      goback() {
+        window.history.back();
+      }
+    }
+  });
+</script>
+<style>
+  .activity__container {
+    padding: 20px 30px;
+  }
+  .activity__container .container__title {
+    font-size: 20px;
+    text-align: center;
+  }
+  .activity__container .group-item {
+    margin: 15px 0;
+  }
+  .activity__container .group-item .item-content {
+    font-size: 14px;
+  }
+</style>
+</body>
+</html>

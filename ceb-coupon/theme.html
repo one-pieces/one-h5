@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>光大信用卡跨年盛宴</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="./style/index.css">
+  <script src="./js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="theme__header">
+    <img :src="theme.img" />
+  </div>
+  <div class="theme__container container">
+    <div class="container__title">{{theme.label}}</div>
+    <div class="list-item" @click="gotoActivity(item.id)" v-for="item in activityList">
+      <img :src="item.img">
+      <div class="detail">
+        <div class="label">{{item.label}}</div>
+        <div class="intro">{{item.intro}}</div>
+        <div class="goto"> >>查看详情 </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="back-button" @click="goback()"></div>
+  </div>
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data() {
+      const id = window.location.search.split('id=')[1].split('&')[0];
+      return {
+        theme: window.themeList.find(item => item.id == id)
+      };
+    },
+    computed: {
+      activityList() {
+        return this.theme.activityList
+          .map(id => window.activityList.find(item => item.id == id))
+      }
+    },
+    methods: {
+      gotoActivity(id) {
+        window.location.href = './activity.html?id=' + id + '&themeId=' + this.theme.id;
+      },
+      goback() {
+        window.history.back();
+      }
+    }
+  });
+</script>
+<style>
+  .theme__container {
+    padding: 18px 0;
+  }
+  .theme__container .container__title {
+    background: #ffffff;
+    color: #b31927;
+    font-size: 20px;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  .theme__container .list-item {
+    display: flex;
+    background: #faeaea;
+    color: #666666;
+    padding: 15px 20px;
+  }
+  .theme__container .list-item:not(:last-child) {
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .theme__container .list-item img {
+    width: 40%;
+    height: 40%;
+  }
+  
+  .theme__container .list-item .detail {
+    margin-left: 50px;
+  }
+  .theme__container .list-item .label {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 7px;
+  }
+  .theme__container .list-item .intro,
+  .theme__container .list-item .goto {
+    color: #959595;
+    font-size: 13px;
+  }
+</style>
+</body>
+</html>
