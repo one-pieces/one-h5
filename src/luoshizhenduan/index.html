@@ -76,5 +76,28 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    var config = {};
+    //rem设置
+    (function(doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          // 只要不要让最后 fontSize 的值小于 12px 即可，因为如果根元素fontSize 小于 12px，
+          // 有些浏览器（android微信浏览器）会直接取12px，这样会影响所有子元素，
+          // 同时这个 50 需要跟 postcss.config.js 里面的 postcss-px2rem 的 remUnit 相等
+          // 其中375和667是设计稿的宽度和高度（按iphone6屏幕宽高比）
+          docEl.style.fontSize = 50 * (clientWidth / 375) + 'px';
+          //宽与高度
+          document.body.style.height = clientWidth * (375 / 667) + 'px';
+          // config.clientWidth = clientWidth;
+          // config.clientHeight =  clientWidth * (1125 / 2000);
+        };
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
 </body>
 </html>
