@@ -1,17 +1,17 @@
 .page-a {
-  @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f1/background.jpg');
+  @include background-img('../img/f1/background.jpg');
   transform-origin: 70% 23%;
 
   &__talk {
     width: 754px;
     height: 765px;
-    @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f1/talk.png');
+    @include background-img('../img/f1/talk.png');
     position: absolute;
     top: 0;
     right: 0;
   }
 
   &__button {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f1/button.png', 396px, 112px, 62%, '', '', 23%);
+    @include background-obj('../img/f1/button.png', 396px, 112px, 62%, '', '', 23%);
   }
 }

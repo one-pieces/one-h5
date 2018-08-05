@@ -1,20 +1,20 @@
 .page-b {
-  @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/background.jpg');
+  @include background-img('../img/f2/background.jpg');
 
   &__girl {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/girl.png', 766px, 1760px, 12%, 0, initial, initial);
+    @include background-obj('../img/f2/girl.png', 766px, 1760px, 12%, 0, initial, initial);
   }
   &__talk {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/talk.png', 836px, 366px, 2%, 20%, initial, initial);
+    @include background-obj('../img/f2/talk.png', 836px, 366px, 2%, 20%, initial, initial);
   }
   &__bk-down {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/bk-down.png', 100%, 100%, initial, initial, 0, 0);
+    @include background-obj('../img/f2/bk-down.png', 100%, 100%, initial, initial, 0, 0);
   }
   &__bk-down-button {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/button.gif', 362px, 228px, initial, initial, 7%, 20%);
+    @include background-obj('../img/f2/button.gif', 362px, 228px, initial, initial, 7%, 20%);
   }
   &__bag {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/bag.png', 183px, 190px, initial, initial, 43%, 15%);
+    @include background-obj('../img/f2/bag.png', 183px, 190px, initial, initial, 43%, 15%);
   }
   &__bag-tip {
     font-weight: bold;
@@ -24,14 +24,14 @@
     transform: translateY(-100%);
   }
   &__bag-talk {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/bag-talk.png', 594px, 270px, 0, 0, initial, initial);
+    @include background-obj('../img/f2/bag-talk.png', 594px, 270px, 0, 0, initial, initial);
     transform: translateY(-100%);
   }
   &__boom {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/boom.gif', 350px, 254px, initial, initial, 40%, 3%);
+    @include background-obj('../img/f2/boom.gif', 350px, 254px, initial, initial, 40%, 3%);
   }
   &__suitcase {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/suitcase.png', 343px, 341px, initial, initial, 39%, 3%);
+    @include background-obj('../img/f2/suitcase.png', 343px, 341px, initial, initial, 39%, 3%);
   }
   &__suitcase-tip {
     font-weight: bold;
@@ -41,7 +41,7 @@
     transform: translateY(-100%);
   }
   &__suitcase-talk {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f2/suitcase-talk.png', 594px, 270px, 0, 0, initial, initial);
+    @include background-obj('../img/f2/suitcase-talk.png', 594px, 270px, 0, 0, initial, initial);
     transform: translateY(-100%);
   }
 }

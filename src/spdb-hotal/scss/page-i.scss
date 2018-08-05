@@ -1,11 +1,11 @@
 .page-i {
-  @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f10/background.jpg');
+  @include background-img('../img/f10/background.jpg');
 
   &__talk {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f10/talk.png', 776px, 343px, 35%, 20%, initial, initial);
+    @include background-obj('../img/f10/talk.png', 776px, 343px, 35%, 20%, initial, initial);
   }
   &__coin {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f10/coin.png', 728px, 890px, -100%, 50%, initial, initial);
+    @include background-obj('../img/f10/coin.png', 728px, 890px, -100%, 50%, initial, initial);
     transform: translateX(-50%);
   }
 }

@@ -1,35 +1,35 @@
 .page-d {
-  @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/background.jpg');
+  @include background-img('../img/f4/background.jpg');
 
   &__girl-fall {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/girl-fall.png', 100%, 100%, -40%, 0, initial, initial);
+    @include background-obj('../img/f4/girl-fall.png', 100%, 100%, -40%, 0, initial, initial);
   }
   &__girl-sleep {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/girl-sleep.png', 100%, 100%, 0, 0, initial, initial);
+    @include background-obj('../img/f4/girl-sleep.png', 100%, 100%, 0, 0, initial, initial);
   }
   &__talk {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/talk.png', 776px, 343px, 20%, initial, initial, 5%);
+    @include background-obj('../img/f4/talk.png', 776px, 343px, 20%, initial, initial, 5%);
   }
   &__girl-jump {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/girl-jump.png', 701px, 938px, 30%, 50%, initial, initial);
+    @include background-obj('../img/f4/girl-jump.png', 701px, 938px, 30%, 50%, initial, initial);
     transform: translateX(-40%);
   }
   &__wave-down {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/wave-down.png', 100%, 445px, initial, initial, 0, 0);
+    @include background-obj('../img/f4/wave-down.png', 100%, 445px, initial, initial, 0, 0);
     transform: translateY(100%);
   }
   &__wave-left {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/wave-left.png', 100%, 100%, 0, 0, initial, initial);
+    @include background-obj('../img/f4/wave-left.png', 100%, 100%, 0, 0, initial, initial);
     transform: translateY(100%);
   }
   &__wave-right {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/wave-right.png', 100%, 1138px, initial, initial, 0, 0);
+    @include background-obj('../img/f4/wave-right.png', 100%, 1138px, initial, initial, 0, 0);
     transform: translateY(100%);
   }
   &__light {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/light.png', 100%, 1570px, 0, 0, initial, initial);
+    @include background-obj('../img/f4/light.png', 100%, 1570px, 0, 0, initial, initial);
   }
   &__sky {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f4/f5-sky.jpg', 100%, 100%, 0, 0, initial, initial);
+    @include background-obj('../img/f4/f5-sky.jpg', 100%, 100%, 0, 0, initial, initial);
   }
 }

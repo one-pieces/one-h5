@@ -29,16 +29,16 @@ wxSetJsSdkConfig(window.location.href).then(() => {
 
 // 加载loading页资源
 const queue = new ResLoader({
-  baseUrl: 'https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/',
+  // baseUrl: 'https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/',
   resources: [
-    // require('./img/background.jpg'),
-    // require('./img/logo.png'),
-    // require('./img/top.png'),
-    // require('./img/card.png')
-    'background.jpg',
-    'logo.png',
-    'top.png',
-    'card.png'
+    require('./img/background.jpg'),
+    require('./img/logo.png'),
+    require('./img/top.png'),
+    require('./img/card.png')
+    // 'background.jpg',
+    // 'logo.png',
+    // 'top.png',
+    // 'card.png'
   ],
   onProgress(current, total) {
     const percent = parseInt(current / total * 100);

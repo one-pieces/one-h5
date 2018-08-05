@@ -1,19 +1,19 @@
 .page-j {
-  @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f11/background.jpg');
+  @include background-img('../img/f11/background.jpg');
 
   &__background1 {
-    @include background-img('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f11/background1.jpg');
+    @include background-img('../img/f11/background1.jpg');
   }
   &__msg {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f11/msg.gif', 784px, 449px, 13%, 20%, initial, initial);
+    @include background-obj('../img/f11/msg.gif', 784px, 449px, 13%, 20%, initial, initial);
   }
   &__word {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f11/word.png', 636px, 393px, 30%, 20%, initial, initial);
+    @include background-obj('../img/f11/word.png', 636px, 393px, 30%, 20%, initial, initial);
   }
   &__word1 {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f11/word1.png', 636px, 393px, 30%, 19%, initial, initial);
+    @include background-obj('../img/f11/word1.png', 636px, 393px, 30%, 19%, initial, initial);
   }
   &__hotal-logo {
-    @include background-obj('https://one-pieces.oss-cn-hangzhou.aliyuncs.com/h5/spdb/img/f11/hotal-logo.png', 555px, 293px, 16%, 32%, initial, initial);
+    @include background-obj('../img/f11/hotal-logo.png', 555px, 293px, 16%, 32%, initial, initial);
   }
 }
