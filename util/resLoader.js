@@ -9,7 +9,7 @@
     // 浏览器全局变量(root 即 window)
     root.ResLoader = factory(root);
   }
-}(this, function () {
+}(this || window, function () {
   var isFunc = function (f) {
     return typeof f === 'function';
   }

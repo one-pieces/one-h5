@@ -108,7 +108,7 @@ module.exports = {
         limit: 10,
         name: '[path][name].[hash:7].[ext]',
         outputPath: (path) => path.split('/').slice(1).join('/'),
-        publicPath: (path) => path.split('/').slice(1).join('/')
+        publicPath: (path) => path.split('/').slice(2).join('/')
       }
     }]
   },
