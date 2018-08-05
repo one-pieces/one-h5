@@ -2,6 +2,6 @@
 
 ##How to Run
 ```bash
-webpack --watch
+npm run dev
 ```
 then open `dist/index.html` using browser.
